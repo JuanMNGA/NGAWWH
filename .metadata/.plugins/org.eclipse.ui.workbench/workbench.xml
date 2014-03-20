@@ -38,7 +38,7 @@
 </editorArea>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH-desktop/src/com/me/ngawwh/Main.java" title="Main.java" tooltip="NGAWWH-desktop/src/com/me/ngawwh/Main.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH-desktop/src/com/me/ngawwh/Main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="372" selectionTopPixel="0"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="472" selectionTopPixel="0"/>
 </editor>
 <editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainGame.java" partName="MainGame.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH/src/com/me/ngawwh/MainGame.java" title="MainGame.java" tooltip="NGAWWH/src/com/me/ngawwh/MainGame.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH/src/com/me/ngawwh/MainGame.java"/>
