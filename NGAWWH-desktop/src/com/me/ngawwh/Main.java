@@ -6,11 +6,11 @@ import com.badlogic.gdx.backends.lwjgl.LwjglApplicationConfiguration;
 public class Main {
 	public static void main(String[] args) {
 		LwjglApplicationConfiguration cfg = new LwjglApplicationConfiguration();
-		cfg.title = "NGAWWH";
+		cfg.title = "Neo Genesis, a World Without Heroes";
 		cfg.useGL20 = false;
-		cfg.width = 480;
-		cfg.height = 320;
+		cfg.width = 800;
+		cfg.height = 400;
 		
-		new LwjglApplication(new Main(), cfg);
+		new LwjglApplication(new MainGame(), cfg);
 	}
 }
