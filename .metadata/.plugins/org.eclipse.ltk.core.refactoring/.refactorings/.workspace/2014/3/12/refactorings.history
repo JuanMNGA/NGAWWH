@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/slipperyPenguin" element2="/slipperyPenguin-android" element3="/slipperyPenguin-desktop" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1395335051823"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/slipperyPenguin" element2="/slipperyPenguin-android" element3="/slipperyPenguin-desktop" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1395335051823"/>&#x0A;<refactoring comment="Delete 3 resources" deleteContents="false" description="Delete 3 resources" element1="/slipperyPenguin" element2="/slipperyPenguin-android" element3="/slipperyPenguin-desktop" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="3" stamp="1395362846673"/>
 </session>

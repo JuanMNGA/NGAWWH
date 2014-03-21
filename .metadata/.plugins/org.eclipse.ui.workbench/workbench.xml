@@ -31,23 +31,21 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH-desktop/src/com/me/ngawwh/Main.java" title="Main.java" tooltip="NGAWWH-desktop/src/com/me/ngawwh/Main.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH-desktop/src/com/me/ngawwh/Main.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="472" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainGame.java" partName="MainGame.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH/src/com/me/ngawwh/MainGame.java" title="MainGame.java" tooltip="NGAWWH/src/com/me/ngawwh/MainGame.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH/src/com/me/ngawwh/MainGame.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1140" selectionTopPixel="0"/>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" partName="MainActivity.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH-android/src/com/me/ngawwh/MainActivity.java" title="MainActivity.java" tooltip="NGAWWH-android/src/com/me/ngawwh/MainActivity.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH-android/src/com/me/ngawwh/MainActivity.java"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="474" selectionTopPixel="0"/>
 </editor>
 </editors>
 <views>
 <view id="org.eclipse.ui.navigator.ProjectExplorer" partName="Project Explorer">
 <viewState CommonNavigator.LINKING_ENABLED="0" org.eclipse.ui.navigator.resources.workingSets.showTopLevelWorkingSets="0"/>
+</view>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView" partName="LogCat">
+<viewState/>
 </view>
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
@@ -105,6 +103,7 @@
 <view id="org.eclipse.ui.views.ContentOutline"/>
 <view id="org.eclipse.ui.views.TaskList"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="com.android.ide.eclipse.ddms.views.LogCatView"/>
 <fastViewBars/>
 <layout>
 <mainWindow>
@@ -129,13 +128,15 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.28139535" ratioLeft="363" ratioRight="927" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottomRight" ratio="0.6596434" ratioLeft="407" ratioRight="210" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
+<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
+<page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
 <page content="org.eclipse.team.ui.GenericHistoryView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -160,6 +161,7 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/MainGame.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH-desktop/src/com/me/ngawwh/Main.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH-android/src/com/me/ngawwh/MainActivity.java"/>
 </editors>
 <item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="0" y="0"/>
@@ -215,8 +217,11 @@
 <item historyLabel="MainGame.java" index="2">
 <position info="not_deleted" x="1140" y="0"/>
 </item>
-<item active="true" historyLabel="Main.java" index="3">
-<position info="not_deleted" x="372" y="0"/>
+<item historyLabel="Main.java" index="3">
+<position info="not_deleted" x="472" y="0"/>
+</item>
+<item active="true" historyLabel="MainActivity.java" index="5">
+<position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -235,6 +240,9 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="NGAWWH-android/src/com/me/ngawwh/MainActivity.java">
+<persistable path="/NGAWWH-android/src/com/me/ngawwh/MainActivity.java"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameScreen.java" tooltip="slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java">
 <persistable path="/slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java"/>
 </file>
