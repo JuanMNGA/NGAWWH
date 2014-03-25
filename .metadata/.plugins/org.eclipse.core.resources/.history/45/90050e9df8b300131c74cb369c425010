@@ -85,7 +85,6 @@ public class MainGame implements ApplicationListener {
 			batch.draw(texturePrincipal,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 			batch.draw(buttonChar,Gdx.graphics.getWidth()*(0.45375f),Gdx.graphics.getHeight()*(0.53f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
 			batch.draw(buttonMap,Gdx.graphics.getWidth()*(0.64f),Gdx.graphics.getHeight()*(0.53f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
-			batch.draw(buttonQuest,Gdx.graphics.getWidth()*(0.825f),Gdx.graphics.getHeight()*(0.53f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
 		}
 		if(mapa==true){
 			batch.draw(textureMap,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
