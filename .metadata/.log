@@ -226,3 +226,52 @@ Command-line arguments:  -os linux -ws gtk -arch x86
 
 !ENTRY org.eclipse.ui 2 2 2014-03-24 18:18:32.781
 !MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-25 08:57:07.985 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ui 2 2 2014-03-25 09:43:38.929
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-25 10:59:38.006 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ui 2 2 2014-03-25 11:11:55.006
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-03-31 08:48:21.990 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-31 09:08:13.454
+!MESSAGE 
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Resource '/slipperyPenguin-android/res' does not exist.
+	at org.eclipse.core.internal.resources.Resource.checkExists(Resource.java:341)
+	at org.eclipse.core.internal.resources.Resource.checkAccessible(Resource.java:215)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:266)
+	at org.eclipse.core.internal.resources.Container.members(Container.java:249)
+	at com.android.ide.eclipse.adt.internal.sdk.Sdk$7.run(Sdk.java:1453)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SUBENTRY 1 org.eclipse.core.resources 4 368 2014-03-31 09:08:13.456
+!MESSAGE Resource '/slipperyPenguin-android/res' does not exist.
+
+!ENTRY org.eclipse.ui 2 2 2014-03-31 09:40:36.671
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY com.android.ide.eclipse.adt 1 0 2014-03-31 09:47:08.080
+!MESSAGE No valid Android XML Editor Delegate found for file /NGAWWH/src/Main.gwt.xml [Res null, type null]
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-31 09:47:12.521
+!MESSAGE Failed to load properties file for project 'NGAWWH'
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-03-31 09:47:14.707
+!MESSAGE Failed to load properties file for project 'NGAWWH'
