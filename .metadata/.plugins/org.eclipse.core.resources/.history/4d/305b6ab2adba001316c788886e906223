@@ -1,0 +1,89 @@
+package com.me.ngawwh;
+
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class MainGame extends Game {
+	private MainGamePage principal;
+	private MapGamePage mapas;
+	private Texture textureStylist;
+	private Texture textureQuest;
+	private Texture textureSelectQuest;
+	private Texture textureMinigame;
+	private Texture textureInfoChar;
+	private Texture textureInventory;
+	private Texture textureOptions;
+	
+	private boolean estilista;
+	private boolean inicio;
+	private boolean mapa;
+	private boolean info;
+	private boolean minigame;
+	private boolean quest;
+	private boolean questselect;
+	
+	@Override
+	public void create() {
+		principal = new MainGamePage(this);
+		mapas = new MapGamePage(this);
+		/*
+		textureStylist = new Texture(Gdx.files.internal("data/backgroundstilyst.png"));
+		textureStylist.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureQuest = new Texture(Gdx.files.internal("data/backgroundquestmenu.png"));
+		textureQuest.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureSelectQuest = new Texture(Gdx.files.internal("data/backgroundquestinfo.png"));
+		textureSelectQuest.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureMinigame = new Texture(Gdx.files.internal("data/backgroundminigame.png"));
+		textureMinigame.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureInfoChar = new Texture(Gdx.files.internal("data/backgroundquestmenu.png"));
+		textureInfoChar.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureInventory = new Texture(Gdx.files.internal("data/backgroundquestmenu.png"));
+		textureInventory.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureOptions = new Texture(Gdx.files.internal("data/backgroundstilyst.png"));
+		textureOptions.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		*/
+		inicio = true;
+		estilista = false;
+		mapa = false;
+		info = false;
+		minigame = false;
+		quest = false;
+		questselect = false;
+		if(inicio){
+			setScreen(principal);
+		}
+		if(mapa){
+			setScreen(mapas);
+		}
+	}
+
+	@Override
+	public void dispose() {
+		super.dispose();
+	}
+
+	@Override
+	public void render() {
+		super.render();
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		super.resize(width, height);
+	}
+
+	@Override
+	public void pause() {
+		super.pause();
+	}
+
+	@Override
+	public void resume() {
+		super.resume();
+	}
+}

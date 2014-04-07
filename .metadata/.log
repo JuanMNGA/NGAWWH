@@ -275,3 +275,36 @@ org.eclipse.core.internal.resources.ResourceException: Resource '/slipperyPengui
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2014-03-31 09:47:14.707
 !MESSAGE Failed to load properties file for project 'NGAWWH'
+!SESSION 2014-04-01 13:48:39.504 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-04-01 13:48:47.448
+!MESSAGE projectOpenedWithWorkspace: failed to find manifest package for project NGAWWH-android
+
+!ENTRY com.android.ide.eclipse.adt 4 0 2014-04-01 13:48:49.859
+!MESSAGE fileChanged: failed to find manifest package for project NGAWWH-android
+
+!ENTRY org.eclipse.ui 2 2 2014-04-01 14:26:25.977
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-04-02 15:24:19.140 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ui 2 2 2014-04-02 16:32:09.858
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2014-04-02 23:04:25.301 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.7.0_51
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=es_ES
+Command-line arguments:  -os linux -ws gtk -arch x86
+
+!ENTRY org.eclipse.ui 2 2 2014-04-02 23:05:58.733
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)

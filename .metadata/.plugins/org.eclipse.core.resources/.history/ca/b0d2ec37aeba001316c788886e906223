@@ -1,0 +1,89 @@
+package com.me.ngawwh;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class MainGamePage implements Screen{
+	private MainGame MG;
+	private SpriteBatch b;
+	private Texture texturePrincipal;
+	private Texture buttonChar;
+	private Texture buttonMap;
+	private Texture buttonQuest;
+	private Texture buttonMini;
+	private Texture buttonConf;
+	private Texture buttonInv;
+	
+	public MainGamePage(MainGame mg){
+		MG = mg;
+		b = new SpriteBatch();
+		texturePrincipal = new Texture(Gdx.files.internal("data/backgroundmaingame.png"));
+		texturePrincipal.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		buttonChar = new Texture(Gdx.files.internal("data/BotonPers.png"));
+		buttonMap = new Texture(Gdx.files.internal("data/BotonMapa.png"));
+		buttonQuest = new Texture(Gdx.files.internal("data/BotonQuest.png"));
+		buttonMini = new Texture(Gdx.files.internal("data/BotonMiniG.png"));
+		buttonConf = new Texture(Gdx.files.internal("data/BotonConfig.png"));
+		buttonInv = new Texture(Gdx.files.internal("data/BotonMochila.png"));
+	}
+	
+	public void dispose(){
+	}
+
+	@Override
+	public void render(float delta) {
+		if(Gdx.input.isTouched()){
+			MG.inicio = false;
+			MG.mapa = true;
+		}
+		Gdx.gl.glClearColor(0, 0, 0, 1); //Gdx es una clase con la que podemos acceder a variables que hacen referencia a todos los subsitemas, como son graficos, audio, ficheros, entrada y aplicaciones
+		// gl es una variable de tipo GL, nos permite acceder a metodos de GL10, GL11 y GL20
+		//En este caso glClearColor es un bucle (game loop) que establecera el fondo de la pantalla negro (0,0,0) con transparencia 1
+		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		b.begin();
+		b.draw(texturePrincipal,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		b.draw(buttonChar,Gdx.graphics.getWidth()*(0.45375f),Gdx.graphics.getHeight()*(0.53f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
+		b.draw(buttonMap,Gdx.graphics.getWidth()*(0.64f),Gdx.graphics.getHeight()*(0.53f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
+		b.draw(buttonQuest,Gdx.graphics.getWidth()*(0.825f),Gdx.graphics.getHeight()*(0.53f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
+		b.draw(buttonMini,Gdx.graphics.getWidth()*(0.45375f),Gdx.graphics.getHeight()*(0.07f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
+		b.draw(buttonInv, Gdx.graphics.getWidth()*(0.64f), Gdx.graphics.getHeight()*(0.07f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
+		b.draw(buttonConf, Gdx.graphics.getWidth()*(0.825f),Gdx.graphics.getHeight()*(0.07f),(Gdx.graphics.getWidth()*(0.1625f)),(Gdx.graphics.getHeight()*(0.42f)));
+		b.end();
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void hide() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pause() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resume() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
