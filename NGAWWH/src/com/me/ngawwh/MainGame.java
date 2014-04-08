@@ -6,6 +6,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,35 +14,34 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class MainGame extends Game implements InputProcessor {
 	private MainGamePage principal;
 	private MapGamePage mapas;
+	private CharGamePage informacion;
+	private QuestGamePage quest;
+	private MiniGamePage minig;
+	private InvGamePage invent;
+	private ConfGamePage config;
 	private Texture textureStylist;
-	private Texture textureQuest;
 	private Texture textureSelectQuest;
-	private Texture textureMinigame;
-	private Texture textureInfoChar;
-	private Texture textureInventory;
-	private Texture textureOptions;
+	private OrthographicCamera camera;
 	
 	@Override
 	public void create() {
+		camera = new OrthographicCamera(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		Gdx.input.setInputProcessor(this);
         Gdx.input.setCatchBackKey(true);
-		principal = new MainGamePage(this);
-		mapas = new MapGamePage(this);
+		principal = new MainGamePage(this,camera);
+		mapas = new MapGamePage(this,camera);
+		informacion = new CharGamePage(this,camera);
+		quest = new QuestGamePage(this,camera);
+		minig = new MiniGamePage(this,camera);
+		invent = new InvGamePage(this,camera);
+		config = new ConfGamePage(this,camera);
 		/*
 		textureStylist = new Texture(Gdx.files.internal("data/backgroundstilyst.png"));
 		textureStylist.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		textureQuest = new Texture(Gdx.files.internal("data/backgroundquestmenu.png"));
-		textureQuest.setFilter(TextureFilter.Linear, TextureFilter.Linear);
 		textureSelectQuest = new Texture(Gdx.files.internal("data/backgroundquestinfo.png"));
 		textureSelectQuest.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		textureMinigame = new Texture(Gdx.files.internal("data/backgroundminigame.png"));
-		textureMinigame.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		textureInfoChar = new Texture(Gdx.files.internal("data/backgroundquestmenu.png"));
-		textureInfoChar.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		textureInventory = new Texture(Gdx.files.internal("data/backgroundquestmenu.png"));
-		textureInventory.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		textureOptions = new Texture(Gdx.files.internal("data/backgroundstilyst.png"));
-		textureOptions.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		
 		*/
 		setScreen(principal);
 	}
@@ -49,7 +49,12 @@ public class MainGame extends Game implements InputProcessor {
 	public void cambiarScreens(int i){
 		switch(i){
 		case 0: setScreen(principal); break;
-		case 1: setScreen(mapas); break;
+		case 1: setScreen(informacion); break;
+		case 2: setScreen(mapas); break;
+		case 3: setScreen(quest); break;
+		case 4: setScreen(minig); break;
+		case 5: setScreen(invent); break;
+		case 6: setScreen(config); break;
 		}
 	}
 

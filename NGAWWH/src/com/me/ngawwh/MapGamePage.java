@@ -3,21 +3,25 @@ package com.me.ngawwh;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MapGamePage implements Screen{
-	
+	private OrthographicCamera camera;
 	private Texture textureMap;
 	private SpriteBatch b;
 	private MainGame mg;
 	
-	public MapGamePage(MainGame MG){
+	public MapGamePage(MainGame MG, OrthographicCamera camera){
+		this.camera = camera;
+		camera.update();
 		mg = MG;
+		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		b.setProjectionMatrix(camera.combined);
 		textureMap = new Texture(Gdx.files.internal("data/backgroundselectmap.png"));
 		textureMap.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		b = new SpriteBatch();
 	}
 
 	@Override

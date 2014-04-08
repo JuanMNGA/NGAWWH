@@ -23,9 +23,8 @@ public class MainGamePage implements Screen{
 	private float alt1, alt2, anch1, anch2, anch3;
 	private Vector2 AspectRatio;
 	
-	public MainGamePage(MainGame mg){
-		camera = new OrthographicCamera(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+	public MainGamePage(MainGame mg, OrthographicCamera camera){
+		this.camera = camera;
 		camera.update();
 		anch1 = Gdx.graphics.getWidth()*(0.45375f);
 		anch2 = Gdx.graphics.getWidth()*(0.64f);
@@ -45,6 +44,11 @@ public class MainGamePage implements Screen{
 		buttonConf = new Texture(Gdx.files.internal("data/BotonConfig.png"));
 		buttonInv = new Texture(Gdx.files.internal("data/BotonMochila.png"));
 		r_pers = new Rectangle(anch1,alt1,AspectRatio.x,AspectRatio.y);
+		r_map = new Rectangle(anch2,alt1,AspectRatio.x,AspectRatio.y);
+		r_quest = new Rectangle(anch3,alt1,AspectRatio.x,AspectRatio.y);
+		r_game = new Rectangle(anch1,alt2,AspectRatio.x,AspectRatio.y);
+		r_inv = new Rectangle(anch2,alt2,AspectRatio.x,AspectRatio.y);
+		r_conf = new Rectangle(anch3,alt2,AspectRatio.x,AspectRatio.y);
 	}
 	
 	public void dispose(){
@@ -57,6 +61,21 @@ public class MainGamePage implements Screen{
 			camera.unproject(posicion);
 			if(r_pers.contains(posicion.x, posicion.y)){
 				MG.cambiarScreens(1);
+			}
+			if(r_map.contains(posicion.x, posicion.y)){
+				MG.cambiarScreens(2);
+			}
+			if(r_quest.contains(posicion.x, posicion.y)){
+				MG.cambiarScreens(3);
+			}
+			if(r_game.contains(posicion.x, posicion.y)){
+				MG.cambiarScreens(4);
+			}
+			if(r_inv.contains(posicion.x, posicion.y)){
+				MG.cambiarScreens(5);
+			}
+			if(r_conf.contains(posicion.x, posicion.y)){
+				MG.cambiarScreens(6);
 			}
 		}
 		Gdx.gl.glClearColor(0, 0, 0, 1); //Gdx es una clase con la que podemos acceder a variables que hacen referencia a todos los subsitemas, como son graficos, audio, ficheros, entrada y aplicaciones
