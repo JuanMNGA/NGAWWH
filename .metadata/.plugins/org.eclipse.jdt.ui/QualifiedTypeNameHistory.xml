@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Game"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.ui.Button"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Input.Keys"/>
@@ -12,4 +11,7 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture.TextureFilter"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Screen"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.BitmapFont"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Color"/>
 </qualifiedTypeNameHistroy>

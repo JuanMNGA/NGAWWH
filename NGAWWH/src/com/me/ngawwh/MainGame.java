@@ -12,6 +12,7 @@ import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class MainGame extends Game implements InputProcessor {
+	private StartGamePage inicio;
 	private MainGamePage principal;
 	private MapGamePage mapas;
 	private CharGamePage informacion;
@@ -29,6 +30,7 @@ public class MainGame extends Game implements InputProcessor {
 		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		Gdx.input.setInputProcessor(this);
         Gdx.input.setCatchBackKey(true);
+        inicio = new StartGamePage(this,camera);
 		principal = new MainGamePage(this,camera);
 		mapas = new MapGamePage(this,camera);
 		informacion = new CharGamePage(this,camera);
@@ -43,7 +45,7 @@ public class MainGame extends Game implements InputProcessor {
 		textureSelectQuest.setFilter(TextureFilter.Linear, TextureFilter.Linear);
 		
 		*/
-		setScreen(principal);
+		setScreen(inicio);
 	}
 	
 	public void cambiarScreens(int i){
@@ -85,12 +87,11 @@ public class MainGame extends Game implements InputProcessor {
 
 	@Override
 	public boolean keyDown(int keycode) {
-		if(this.getScreen().hashCode() != principal.hashCode()){
-			if(keycode == Keys.BACK){
+		if(this.getScreen().hashCode() != principal.hashCode() && keycode == Keys.BACK){
 				setScreen(principal);
-			}
 		}else{
-			Gdx.input.setCatchBackKey(false);
+			setScreen(inicio);
+			//Gdx.input.setCatchBackKey(false);
 		}
 		return false;
 	}

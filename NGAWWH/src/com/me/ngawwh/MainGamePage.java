@@ -36,7 +36,7 @@ public class MainGamePage implements Screen{
 		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.setProjectionMatrix(camera.combined);
 		texturePrincipal = new Texture(Gdx.files.internal("data/backgroundmaingame.png"));
-		texturePrincipal.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		texturePrincipal.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
 		buttonChar = new Texture(Gdx.files.internal("data/BotonPers.png"));
 		buttonMap = new Texture(Gdx.files.internal("data/BotonMapa.png"));
 		buttonQuest = new Texture(Gdx.files.internal("data/BotonQuest.png"));
