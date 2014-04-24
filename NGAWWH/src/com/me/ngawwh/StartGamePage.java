@@ -34,11 +34,11 @@ public class StartGamePage implements Screen{
 		textureStartGame = new Texture(Gdx.files.internal("data/backgroundInicio.png"));
 		textureStartGame.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
 		textureNew = new Texture(Gdx.files.internal("data/BotonesInicio.png"));
-		textureNew.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureNew.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
 		textureCont = new Texture(Gdx.files.internal("data/BotonesInicio.png"));
-		textureCont.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureCont.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
 		textureExit = new Texture(Gdx.files.internal("data/BotonesInicio.png"));
-		textureExit.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureExit.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
 		pos1x = Gdx.graphics.getWidth()*(0.1125f);
 		pos2x = Gdx.graphics.getWidth()*(0.375f);
 		pos3x = Gdx.graphics.getWidth()*(0.6375f);
@@ -57,7 +57,7 @@ public class StartGamePage implements Screen{
 			Vector3 posicion = new Vector3(Gdx.input.getX(),Gdx.input.getY(),0);
 			camera.unproject(posicion);
 			if(r_New.contains(posicion.x,posicion.y)){
-				MG.cambiarScreens(0);
+				MG.cambiarScreens(7);
 			}
 			if(r_Cont.contains(posicion.x,posicion.y)){
 				MG.cambiarScreens(0);

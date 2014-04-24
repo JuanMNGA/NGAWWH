@@ -3,6 +3,7 @@ package com.me.ngawwh;
 import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
 import com.badlogic.gdx.graphics.GL10;
@@ -20,8 +21,8 @@ public class MainGame extends Game implements InputProcessor {
 	private MiniGamePage minig;
 	private InvGamePage invent;
 	private ConfGamePage config;
-	private Texture textureStylist;
-	private Texture textureSelectQuest;
+	private StylistGamePage stylist;
+	private QuestSelGamePage questsel;
 	private OrthographicCamera camera;
 	
 	@Override
@@ -38,6 +39,8 @@ public class MainGame extends Game implements InputProcessor {
 		minig = new MiniGamePage(this,camera);
 		invent = new InvGamePage(this,camera);
 		config = new ConfGamePage(this,camera);
+		stylist = new StylistGamePage(this,camera);
+		questsel = new QuestSelGamePage(this,camera);
 		/*
 		textureStylist = new Texture(Gdx.files.internal("data/backgroundstilyst.png"));
 		textureStylist.setFilter(TextureFilter.Linear, TextureFilter.Linear);
@@ -57,6 +60,8 @@ public class MainGame extends Game implements InputProcessor {
 		case 4: setScreen(minig); break;
 		case 5: setScreen(invent); break;
 		case 6: setScreen(config); break;
+		case 7: setScreen(stylist); break;
+		case 8: setScreen(questsel); break;
 		}
 	}
 
@@ -87,11 +92,28 @@ public class MainGame extends Game implements InputProcessor {
 
 	@Override
 	public boolean keyDown(int keycode) {
-		if(this.getScreen().hashCode() != principal.hashCode() && keycode == Keys.BACK){
-				setScreen(principal);
+		if(Gdx.app.getType() == ApplicationType.Android){
+			if(this.getScreen().hashCode() != principal.hashCode() && this.getScreen().hashCode() != inicio.hashCode() && this.getScreen().hashCode() != stylist.hashCode() && keycode == Keys.BACK){
+				if(this.getScreen().hashCode() == questsel.hashCode() && keycode == Keys.BACK){
+					setScreen(quest);
+				}else{
+					setScreen(principal);
+				}
+			}else{
+					setScreen(inicio);
+				//Gdx.input.setCatchBackKey(false);
+			}
 		}else{
-			setScreen(inicio);
-			//Gdx.input.setCatchBackKey(false);
+			if(this.getScreen().hashCode() != principal.hashCode() && this.getScreen().hashCode() != inicio.hashCode() && this.getScreen().hashCode() != stylist.hashCode() && keycode == Keys.BACKSPACE){
+				if(this.getScreen().hashCode() == questsel.hashCode() && keycode == Keys.BACKSPACE){
+					setScreen(quest);
+				}else{
+					setScreen(principal);
+				}
+			}else{
+				setScreen(inicio);
+				//Gdx.input.setCatchBackKey(false);
+			}
 		}
 		return false;
 	}

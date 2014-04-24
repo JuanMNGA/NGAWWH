@@ -21,7 +21,7 @@ public class MapGamePage implements Screen{
 		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.setProjectionMatrix(camera.combined);
 		textureMap = new Texture(Gdx.files.internal("data/backgroundselectmap.png"));
-		textureMap.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureMap.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
 	}
 
 	@Override

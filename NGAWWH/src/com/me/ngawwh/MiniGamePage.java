@@ -20,7 +20,7 @@ public class MiniGamePage implements Screen{
 		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.setProjectionMatrix(camera.combined);
 		textureMinigame = new Texture(Gdx.files.internal("data/backgroundminigame.png"));
-		textureMinigame.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureMinigame.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
 	}
 
 	@Override

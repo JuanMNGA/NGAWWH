@@ -22,6 +22,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="232" y="30"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="draw9patchplugin.editors.Draw9PatchEditor" itemType="typePlaceholder" x="-1" y="-1"/>
+<coolItem id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.jdt.ui.PropertiesFileEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="org.eclipse.ui.DefaultTextEditor" itemType="typePlaceholder" x="-1" y="-1"/>
 <coolItem id="com.android.ide.eclipse.editors.CommonXmlEditor" itemType="typePlaceholder" x="-1" y="-1"/>
@@ -35,33 +37,13 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
-<part id="1"/>
-<part id="2"/>
-<part id="3"/>
-<part id="4"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainGamePage.java" partName="MainGamePage.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH/src/com/me/ngawwh/MainGamePage.java" title="MainGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/MainGamePage.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH/src/com/me/ngawwh/MainGamePage.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1644" selectionTopPixel="314"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainGame.java" partName="MainGame.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH/src/com/me/ngawwh/MainGame.java" title="MainGame.java" tooltip="NGAWWH/src/com/me/ngawwh/MainGame.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH/src/com/me/ngawwh/MainGame.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="2801" selectionTopPixel="1180"/>
-</editor>
 <editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" partName="Main.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH-desktop/src/com/me/ngawwh/Main.java" title="Main.java" tooltip="NGAWWH-desktop/src/com/me/ngawwh/Main.java" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH-desktop/src/com/me/ngawwh/Main.java"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="463" selectionTopPixel="0"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StartGamePage.java" partName="StartGamePage.java" path="/home/juanmi/Escritorio/Android/NGAWWH/NGAWWH/src/com/me/ngawwh/StartGamePage.java" title="StartGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/StartGamePage.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/NGAWWH/src/com/me/ngawwh/StartGamePage.java"/>
-<editorState selectionHorizontalPixel="38" selectionLength="0" selectionOffset="3664" selectionTopPixel="1026"/>
-</editor>
-<editor id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameScreen.java" partName="GameScreen.java" path="/home/juanmi/Escritorio/Taller Libgdx moviles/Slippery_Penguin/slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java" title="GameScreen.java" tooltip="slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java"/>
-<editorState selectionHorizontalPixel="0" selectionLength="101" selectionOffset="4787" selectionTopPixel="1362"/>
 </editor>
 </editors>
 <views>
@@ -153,7 +135,7 @@
 </info>
 <info part="org.eclipse.ui.editorss" ratio="0.28139535" ratioLeft="363" ratioRight="927" relationship="2" relative="topLeft"/>
 <info folder="true" part="bottomRight" ratio="0.6596434" ratioLeft="407" ratioRight="210" relationship="4" relative="org.eclipse.ui.editorss">
-<folder activePageID="com.android.ide.eclipse.ddms.views.LogCatView" appearance="2" expanded="2">
+<folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.views.TaskList" label="Tasks"/>
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
 <page content="com.android.ide.eclipse.ddms.views.LogCatView" label="LogCat"/>
@@ -181,159 +163,165 @@
 <workingSets/>
 <navigationHistory>
 <editors>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/MainGame.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH-desktop/src/com/me/ngawwh/Main.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/MainGame.java"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/StartGamePage.java"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/MainGamePage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/StylistGamePage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/CharGamePage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/QuestSelGamePage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/InvGamePage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/QuestGamePage.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/NGAWWH/src/com/me/ngawwh/StylistGamePage.java"/>
 </editors>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="885" y="0"/>
-</item>
-<item historyLabel="GameScreen.java" index="3">
-<position info="not_deleted" x="4787" y="101"/>
+<item historyLabel="CharGamePage.java" index="5">
+<position info="not_deleted" x="919" y="557"/>
 </item>
 <item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="2144" y="0"/>
+<position info="not_deleted" x="2502" y="0"/>
 </item>
-<item historyLabel="GameScreen.java" index="3">
-<position info="not_deleted" x="4787" y="101"/>
+<item historyLabel="StylistGamePage.java" index="4">
+<position info="not_deleted" x="984" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3710" y="0"/>
-</item>
-<item historyLabel="GameScreen.java" index="3">
-<position info="not_deleted" x="4787" y="101"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3383" y="0"/>
-</item>
-<item historyLabel="GameScreen.java" index="3">
-<position info="not_deleted" x="4787" y="101"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3383" y="0"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3385" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
 <item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3385" y="0"/>
+<position info="not_deleted" x="2502" y="0"/>
 </item>
-<item historyLabel="GameScreen.java" index="3">
-<position info="not_deleted" x="4787" y="101"/>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="2131" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position/>
-</item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="MainGame.java" index="0">
-<position info="not_deleted" x="2801" y="0"/>
+<item historyLabel="StylistGamePage.java" index="4">
+<position info="not_deleted" x="568" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position/>
-</item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position/>
+<item historyLabel="StylistGamePage.java" index="4">
+<position info="not_deleted" x="568" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="QuestSelGamePage.java" index="6">
+<position info="not_deleted" x="371" y="0"/>
+</item>
+<item historyLabel="StylistGamePage.java" index="4">
+<position info="not_deleted" x="377" y="506"/>
+</item>
+<item historyLabel="QuestSelGamePage.java" index="6">
+<position info="not_deleted" x="519" y="0"/>
+</item>
+<item historyLabel="InvGamePage.java" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="QuestSelGamePage.java" index="6">
+<position info="not_deleted" x="806" y="0"/>
+</item>
+<item historyLabel="StylistGamePage.java" index="4">
+<position info="not_deleted" x="933" y="614"/>
+</item>
+<item historyLabel="QuestSelGamePage.java" index="6">
+<position info="not_deleted" x="988" y="1"/>
+</item>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="2131" y="0"/>
+</item>
+<item historyLabel="QuestSelGamePage.java" index="6">
+<position info="not_deleted" x="989" y="0"/>
+</item>
+<item historyLabel="StylistGamePage.java" index="4">
+<position info="not_deleted" x="1547" y="0"/>
+</item>
+<item historyLabel="QuestGamePage.java" index="8">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="QuestGamePage.java" index="8">
+<position info="not_deleted" x="976" y="0"/>
+</item>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="2432" y="0"/>
+</item>
+<item historyLabel="QuestGamePage.java" index="8">
+<position info="not_deleted" x="976" y="0"/>
+</item>
+<item historyLabel="QuestSelGamePage.java" index="6">
+<position info="not_deleted" x="989" y="0"/>
+</item>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="2432" y="0"/>
+</item>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3165" y="0"/>
+</item>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3614" y="0"/>
+</item>
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position/>
+<item historyLabel="QuestGamePage.java" index="8">
+<position info="not_deleted" x="562" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3450" y="0"/>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3614" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="QuestGamePage.java" index="8">
+<position info="not_deleted" x="562" y="0"/>
+</item>
+<item historyLabel="StartGamePage.java" index="2">
+<position info="not_deleted" x="2502" y="0"/>
+</item>
+<item historyLabel="QuestGamePage.java" index="8">
+<position info="not_deleted" x="562" y="0"/>
+</item>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3614" y="0"/>
+</item>
+<item historyLabel="MainGamePage.java" index="3">
+<position info="not_deleted" x="3151" y="0"/>
+</item>
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3446" y="0"/>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3704" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3488" y="0"/>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3056" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3487" y="0"/>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3056" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3487" y="0"/>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3036" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3446" y="0"/>
+<item historyLabel="MainGame.java" index="1">
+<position info="not_deleted" x="3006" y="0"/>
 </item>
-<item historyLabel="Main.java" index="1">
+<item historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
-<item historyLabel="MainGame.java" index="0">
-<position info="not_deleted" x="2801" y="0"/>
+<item historyLabel="StylistGamePage.java" index="9">
+<position info="not_deleted" x="880" y="0"/>
 </item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3446" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="463" y="0"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3446" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="463" y="0"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3565" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="463" y="0"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3557" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="463" y="0"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3672" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="463" y="0"/>
-</item>
-<item historyLabel="MainGame.java" index="0">
-<position info="not_deleted" x="2801" y="0"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3664" y="0"/>
-</item>
-<item historyLabel="Main.java" index="1">
-<position info="not_deleted" x="463" y="0"/>
-</item>
-<item historyLabel="StartGamePage.java" index="2">
-<position info="not_deleted" x="3664" y="0"/>
-</item>
-<item active="true" historyLabel="Main.java" index="1">
+<item active="true" historyLabel="Main.java" index="0">
 <position info="not_deleted" x="463" y="0"/>
 </item>
 </navigationHistory>
@@ -353,14 +341,20 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameScreen.java" tooltip="slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java">
-<persistable path="/slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StylistGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/StylistGamePage.java">
+<persistable path="/NGAWWH/src/com/me/ngawwh/StylistGamePage.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainActivity.java" tooltip="NGAWWH-android/src/com/me/ngawwh/MainActivity.java">
-<persistable path="/NGAWWH-android/src/com/me/ngawwh/MainActivity.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/MainGamePage.java">
+<persistable path="/NGAWWH/src/com/me/ngawwh/MainGamePage.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CharGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/CharGamePage.java">
-<persistable path="/NGAWWH/src/com/me/ngawwh/CharGamePage.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/QuestGamePage.java">
+<persistable path="/NGAWWH/src/com/me/ngawwh/QuestGamePage.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InvGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/InvGamePage.java">
+<persistable path="/NGAWWH/src/com/me/ngawwh/InvGamePage.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestSelGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/QuestSelGamePage.java">
+<persistable path="/NGAWWH/src/com/me/ngawwh/QuestSelGamePage.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="StartGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/StartGamePage.java">
 <persistable path="/NGAWWH/src/com/me/ngawwh/StartGamePage.java"/>
@@ -368,14 +362,11 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="ConfGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/ConfGamePage.java">
 <persistable path="/NGAWWH/src/com/me/ngawwh/ConfGamePage.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="InvGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/InvGamePage.java">
-<persistable path="/NGAWWH/src/com/me/ngawwh/InvGamePage.java"/>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="CharGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/CharGamePage.java">
+<persistable path="/NGAWWH/src/com/me/ngawwh/CharGamePage.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MiniGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/MiniGamePage.java">
 <persistable path="/NGAWWH/src/com/me/ngawwh/MiniGamePage.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="QuestGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/QuestGamePage.java">
-<persistable path="/NGAWWH/src/com/me/ngawwh/QuestGamePage.java"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="Main.java" tooltip="NGAWWH-desktop/src/com/me/ngawwh/Main.java">
 <persistable path="/NGAWWH-desktop/src/com/me/ngawwh/Main.java"/>
@@ -383,19 +374,16 @@
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MapGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/MapGamePage.java">
 <persistable path="/NGAWWH/src/com/me/ngawwh/MapGamePage.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="slipperyPenguin.java" tooltip="slipperyPenguin/src/com/me/slipperyPenguin/slipperyPenguin.java">
-<persistable path="/slipperyPenguin/src/com/me/slipperyPenguin/slipperyPenguin.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainGame.java" tooltip="NGAWWH/src/com/me/ngawwh/MainGame.java">
-<persistable path="/NGAWWH/src/com/me/ngawwh/MainGame.java"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="MainGamePage.java" tooltip="NGAWWH/src/com/me/ngawwh/MainGamePage.java">
-<persistable path="/NGAWWH/src/com/me/ngawwh/MainGamePage.java"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="penguin.java" tooltip="slipperyPenguin/src/com/me/slipperyPenguin/penguin.java">
 <persistable path="/slipperyPenguin/src/com/me/slipperyPenguin/penguin.java"/>
 </file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.android.ide.eclipse.editors.manifest.ManifestEditor" name="AndroidManifest.xml" tooltip="NGAWWH-android/AndroidManifest.xml">
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GameScreen.java" tooltip="slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java">
+<persistable path="/slipperyPenguin/src/com/me/slipperyPenguin/GameScreen.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="slipperyPenguin.java" tooltip="slipperyPenguin/src/com/me/slipperyPenguin/slipperyPenguin.java">
+<persistable path="/slipperyPenguin/src/com/me/slipperyPenguin/slipperyPenguin.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart" name="AndroidManifest.xml" tooltip="NGAWWH-android/AndroidManifest.xml">
 <persistable path="/NGAWWH-android/AndroidManifest.xml"/>
 </file>
 </mruList>
