@@ -24,12 +24,13 @@ public class QuestSelGamePage implements Screen{
 		textureQuestSel = new Texture(Gdx.files.internal("data/backgroundquestinfo.png"));
 		textureQuestSel.setFilter(TextureFilter.Linear, TextureFilter.Linear);
 	}
+	
+	public int botonPulsado(float x, float y){
+		return 3;
+	}
 
 	@Override
 	public void render(float delta) {
-		if(Gdx.input.isTouched()){
-			MG.cambiarScreens(3);
-		}
 		Gdx.gl.glClearColor(0, 0, 0, 1); //Gdx es una clase con la que podemos acceder a variables que hacen referencia a todos los subsitemas, como son graficos, audio, ficheros, entrada y aplicaciones
 		// gl es una variable de tipo GL, nos permite acceder a metodos de GL10, GL11 y GL20
 		//En este caso glClearColor es un bucle (game loop) que establecera el fondo de la pantalla negro (0,0,0) con transparencia 1

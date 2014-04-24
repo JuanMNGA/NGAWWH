@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector3;
 
 public class MainGame extends Game implements InputProcessor {
 	private StartGamePage inicio;
@@ -24,9 +25,11 @@ public class MainGame extends Game implements InputProcessor {
 	private StylistGamePage stylist;
 	private QuestSelGamePage questsel;
 	private OrthographicCamera camera;
+	private boolean OnTouch;
 	
 	@Override
 	public void create() {
+		OnTouch = false;
 		camera = new OrthographicCamera(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		Gdx.input.setInputProcessor(this);
@@ -115,7 +118,7 @@ public class MainGame extends Game implements InputProcessor {
 				//Gdx.input.setCatchBackKey(false);
 			}
 		}
-		return false;
+		return true;
 	}
 
 	@Override
@@ -131,14 +134,47 @@ public class MainGame extends Game implements InputProcessor {
 	}
 
 	@Override
-	public boolean touchDown(int screenX, int screenY, int pointer, int button) {
-		// TODO Auto-generated method stub
+	public boolean touchDown(int screenX, int screenY, int pointer, int button){
+		OnTouch = true;
 		return false;
 	}
 
 	@Override
 	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
-		// TODO Auto-generated method stub
+		if(OnTouch){
+			OnTouch = false;
+		Vector3 posicion = new Vector3(screenX, screenY, 0);
+		camera.unproject(posicion);
+		if(this.getScreen().hashCode() == principal.hashCode()){
+			int puls = principal.botonPulsado(posicion.x,posicion.y);
+			if(puls!=-1){
+				this.cambiarScreens(puls);
+			}
+		}else{
+			if(this.getScreen().hashCode() == quest.hashCode()){
+				int puls = quest.botonPulsado(posicion.x,posicion.y);
+				if(puls!=-1){
+					this.cambiarScreens(puls);
+				}
+			}else{
+				if(this.getScreen().hashCode() == inicio.hashCode()){
+					int puls = inicio.botonPulsado(posicion.x,posicion.y);
+					if(puls!=-1){
+						if(puls==-2){
+							Gdx.app.exit();
+						}else{
+							this.cambiarScreens(puls);
+						}
+					}
+				}else{
+					if(this.getScreen().hashCode() == questsel.hashCode()){
+						int puls = questsel.botonPulsado(posicion.x,posicion.y);
+						this.cambiarScreens(puls);
+					}
+				}
+			}
+		}
+		}
 		return false;
 	}
 

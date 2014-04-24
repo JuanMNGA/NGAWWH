@@ -50,22 +50,23 @@ public class StartGamePage implements Screen{
 		r_Exit = new Rectangle(pos3x,pos3y,tamx,tamy);
 		fuente = new BitmapFont(Gdx.files.internal("data/arial.fnt"), Gdx.files.internal("data/arial.png"), false);
 	}
+	
+	public int botonPulsado(float x, float y){
+		if(r_New.contains(x,y)){
+			return 7;
+		}
+		if(r_Cont.contains(x,y)){
+			return 0;
+		}
+		if(r_Exit.contains(x,y)){
+			return -2;
+		}else{
+			return -1;
+		}
+	}
 
 	@Override
 	public void render(float delta) {
-		if(Gdx.input.isTouched()){
-			Vector3 posicion = new Vector3(Gdx.input.getX(),Gdx.input.getY(),0);
-			camera.unproject(posicion);
-			if(r_New.contains(posicion.x,posicion.y)){
-				MG.cambiarScreens(7);
-			}
-			if(r_Cont.contains(posicion.x,posicion.y)){
-				MG.cambiarScreens(0);
-			}
-			if(r_Exit.contains(posicion.x,posicion.y)){
-				Gdx.app.exit();
-			}
-		}
 		Gdx.gl.glClearColor(0, 0, 0, 1); //Gdx es una clase con la que podemos acceder a variables que hacen referencia a todos los subsitemas, como son graficos, audio, ficheros, entrada y aplicaciones
 		// gl es una variable de tipo GL, nos permite acceder a metodos de GL10, GL11 y GL20
 		//En este caso glClearColor es un bucle (game loop) que establecera el fondo de la pantalla negro (0,0,0) con transparencia 1

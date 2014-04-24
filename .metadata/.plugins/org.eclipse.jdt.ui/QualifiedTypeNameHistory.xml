@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Input.Keys"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector3"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.SpriteBatch"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.OrthographicCamera"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture.TextureFilter"/>
@@ -14,4 +13,5 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.BitmapFont"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Color"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Screen"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector3"/>
 </qualifiedTypeNameHistroy>

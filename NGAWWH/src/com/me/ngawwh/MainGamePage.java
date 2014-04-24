@@ -22,10 +22,12 @@ public class MainGamePage implements Screen{
 	private Rectangle r_pers, r_map, r_quest, r_game, r_conf, r_inv;
 	private float alt1, alt2, anch1, anch2, anch3;
 	private Vector2 AspectRatio;
+	private Vector3 posicion;
 	
 	public MainGamePage(MainGame mg, OrthographicCamera camera){
 		this.camera = camera;
 		camera.update();
+		posicion = new Vector3();
 		anch1 = Gdx.graphics.getWidth()*(0.45375f);
 		anch2 = Gdx.graphics.getWidth()*(0.64f);
 		anch3 = Gdx.graphics.getWidth()*(0.825f);
@@ -51,33 +53,40 @@ public class MainGamePage implements Screen{
 		r_conf = new Rectangle(anch3,alt2,AspectRatio.x,AspectRatio.y);
 	}
 	
+	public int botonPulsado(float x, float y){
+		if(r_pers.contains(x,y)){
+			//MG.cambiarScreens(1);
+			return 1;
+		}
+		if(r_map.contains(x,y)){
+			//MG.cambiarScreens(2);
+			return 2;
+		}
+		if(r_quest.contains(x,y)){
+			//MG.cambiarScreens(3);
+			return 3;
+		}
+		if(r_game.contains(x,y)){
+			//MG.cambiarScreens(4);
+			return 4;
+		}
+		if(r_inv.contains(x,y)){
+			//MG.cambiarScreens(5);
+			return 5;
+		}
+		if(r_conf.contains(x,y)){
+			//MG.cambiarScreens(6);
+			return 6;
+		}else{
+			return -1;
+		}
+	}
+	
 	public void dispose(){
 	}
 
 	@Override
 	public void render(float delta) {
-		if(Gdx.input.isTouched()){
-			Vector3 posicion = new Vector3(Gdx.input.getX(),Gdx.input.getY(),0);
-			camera.unproject(posicion);
-			if(r_pers.contains(posicion.x, posicion.y)){
-				MG.cambiarScreens(1);
-			}
-			if(r_map.contains(posicion.x, posicion.y)){
-				MG.cambiarScreens(2);
-			}
-			if(r_quest.contains(posicion.x, posicion.y)){
-				MG.cambiarScreens(3);
-			}
-			if(r_game.contains(posicion.x, posicion.y)){
-				MG.cambiarScreens(4);
-			}
-			if(r_inv.contains(posicion.x, posicion.y)){
-				MG.cambiarScreens(5);
-			}
-			if(r_conf.contains(posicion.x, posicion.y)){
-				MG.cambiarScreens(6);
-			}
-		}
 		Gdx.gl.glClearColor(0, 0, 0, 1); //Gdx es una clase con la que podemos acceder a variables que hacen referencia a todos los subsitemas, como son graficos, audio, ficheros, entrada y aplicaciones
 		// gl es una variable de tipo GL, nos permite acceder a metodos de GL10, GL11 y GL20
 		//En este caso glClearColor es un bucle (game loop) que establecera el fondo de la pantalla negro (0,0,0) con transparencia 1
