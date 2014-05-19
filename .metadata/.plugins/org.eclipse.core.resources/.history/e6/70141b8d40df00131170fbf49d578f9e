@@ -1,0 +1,24 @@
+package com.me.ngawwh;
+
+import com.badlogic.gdx.assets.AssetManager;
+
+public class LoadGamePage {
+	private AssetManager manager = new AssetManager();
+	private static LoadGamePage Loader = new LoadGamePage();
+	
+	private LoadGamePage(){
+		
+	}
+	
+	public static LoadGamePage get_Instance(){
+		return Loader;
+	}
+	
+	public boolean update(){
+		return manager.update();
+	}
+	
+	public float progress(){
+		return manager.getProgress();
+	}
+}

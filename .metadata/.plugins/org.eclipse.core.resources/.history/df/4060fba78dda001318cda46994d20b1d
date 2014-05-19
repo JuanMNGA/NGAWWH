@@ -44,6 +44,15 @@ public class MainGame extends Game implements InputProcessor {
 		Gdx.input.setInputProcessor(this);
         Gdx.input.setCatchBackKey(true);
         inicio = new StartGamePage(this,camera);
+		principal = new MainGamePage(this,camera);
+		mapas = new MapGamePage(this,camera);
+		informacion = new CharGamePage(this,camera);
+		quest = new QuestGamePage(this,camera);
+		minig = new MiniGamePage(this,camera);
+		invent = new InvGamePage(this,camera);
+		config = new ConfGamePage(this,camera);
+		stylist = new StylistGamePage(this,camera);
+		questsel = new QuestSelGamePage(this,camera);
 		setScreen(inicio);
 	}
 	
@@ -59,22 +68,6 @@ public class MainGame extends Game implements InputProcessor {
 		case 7: setScreen(stylist); break;
 		case 8: setScreen(questsel); break;
 		}
-	}
-	
-	public boolean cargarDatos(){
-		if(!cargarObjetos){
-			principal = new MainGamePage(this,camera);
-			mapas = new MapGamePage(this,camera);
-			informacion = new CharGamePage(this,camera);
-			quest = new QuestGamePage(this,camera);
-			minig = new MiniGamePage(this,camera);
-			invent = new InvGamePage(this,camera);
-			config = new ConfGamePage(this,camera);
-			stylist = new StylistGamePage(this,camera);
-			questsel = new QuestSelGamePage(this,camera);
-			cargarObjetos = true;
-		}
-		return cargarObjetos;
 	}
 
 	@Override

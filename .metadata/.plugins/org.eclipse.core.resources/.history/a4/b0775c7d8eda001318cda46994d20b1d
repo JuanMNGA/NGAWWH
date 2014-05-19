@@ -30,7 +30,7 @@ public class MainGame extends Game implements InputProcessor {
 	private QuestSelGamePage questsel;
 	private OrthographicCamera camera;
 	private boolean OnTouch;
-	private boolean cargarObjetos = false;
+	private boolean cargarObjetos = true;
 	private SpriteBatch b;
 	private BitmapFont fuente;
 	

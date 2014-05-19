@@ -73,13 +73,18 @@ public class StartGamePage implements Screen{
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		b.begin();
 		b.draw(textureStartGame,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
-		b.draw(textureNew, pos1x, pos1y, tamx, tamy);
-		b.draw(textureCont, pos2x, pos2y, tamx, tamy);
-		b.draw(textureExit, pos3x, pos3y, tamx, tamy);
-		fuente.setColor(Color.WHITE);
-		fuente.draw(b,"Nuevo",pos1x+(Gdx.graphics.getWidth()*(0.07f)),pos1y+(Gdx.graphics.getHeight()*(0.16f)));
-		fuente.draw(b,"Continuar",pos2x+(Gdx.graphics.getWidth()*(0.04f)),pos2y+(Gdx.graphics.getHeight()*(0.16f)));
-		fuente.draw(b,"Salir",pos3x+(Gdx.graphics.getWidth()*(0.08f)),pos3y+(Gdx.graphics.getHeight()*(0.16f)));
+		if(MG.cargarDatos()){
+			b.draw(textureNew, pos1x, pos1y, tamx, tamy);
+			b.draw(textureCont, pos2x, pos2y, tamx, tamy);
+			b.draw(textureExit, pos3x, pos3y, tamx, tamy);
+			fuente.setColor(Color.WHITE);
+			fuente.draw(b,"Nuevo",pos1x+(Gdx.graphics.getWidth()*(0.07f)),pos1y+(Gdx.graphics.getHeight()*(0.16f)));
+			fuente.draw(b,"Continuar",pos2x+(Gdx.graphics.getWidth()*(0.04f)),pos2y+(Gdx.graphics.getHeight()*(0.16f)));
+			fuente.draw(b,"Salir",pos3x+(Gdx.graphics.getWidth()*(0.08f)),pos3y+(Gdx.graphics.getHeight()*(0.16f)));
+		}else{
+			fuente.setColor(Color.WHITE);
+			fuente.draw(b,"Cargando...",pos2x+(Gdx.graphics.getWidth()*(0.04f)),pos2y+(Gdx.graphics.getHeight()*(0.16f)));
+		}
 		b.end();
 		
 	}

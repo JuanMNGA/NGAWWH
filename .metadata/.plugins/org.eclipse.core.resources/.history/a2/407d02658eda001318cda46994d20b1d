@@ -63,18 +63,18 @@ public class MainGame extends Game implements InputProcessor {
 	
 	public boolean cargarDatos(){
 		if(!cargarObjetos){
-			principal = new MainGamePage(this,camera);
-			mapas = new MapGamePage(this,camera);
-			informacion = new CharGamePage(this,camera);
-			quest = new QuestGamePage(this,camera);
-			minig = new MiniGamePage(this,camera);
-			invent = new InvGamePage(this,camera);
-			config = new ConfGamePage(this,camera);
-			stylist = new StylistGamePage(this,camera);
-			questsel = new QuestSelGamePage(this,camera);
-			cargarObjetos = true;
+		principal = new MainGamePage(this,camera);
+		mapas = new MapGamePage(this,camera);
+		informacion = new CharGamePage(this,camera);
+		quest = new QuestGamePage(this,camera);
+		minig = new MiniGamePage(this,camera);
+		invent = new InvGamePage(this,camera);
+		config = new ConfGamePage(this,camera);
+		stylist = new StylistGamePage(this,camera);
+		questsel = new QuestSelGamePage(this,camera);
+		cargarObjetos = true;
 		}
-		return cargarObjetos;
+		return true;
 	}
 
 	@Override
