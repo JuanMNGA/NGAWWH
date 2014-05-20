@@ -22,12 +22,18 @@ public class MainGamePage implements Screen{
 	private Rectangle r_pers, r_map, r_quest, r_game, r_conf, r_inv;
 	private float alt1, alt2, anch1, anch2, anch3;
 	private Vector2 AspectRatio;
-	private Vector3 posicion;
 	
-	public MainGamePage(MainGame mg, OrthographicCamera camera){
+	private static MainGamePage pagina = new MainGamePage();
+	
+	private MainGamePage(){}
+	
+	public static MainGamePage get_Instance(){
+		return pagina;
+	}
+	
+	public void load(MainGame mg, OrthographicCamera camera){
 		this.camera = camera;
 		camera.update();
-		posicion = new Vector3();
 		anch1 = Gdx.graphics.getWidth()*(0.45375f);
 		anch2 = Gdx.graphics.getWidth()*(0.64f);
 		anch3 = Gdx.graphics.getWidth()*(0.825f);
@@ -37,14 +43,13 @@ public class MainGamePage implements Screen{
 		MG = mg;
 		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.setProjectionMatrix(camera.combined);
-		texturePrincipal = new Texture(Gdx.files.internal("data/backgroundmaingame.png"));
-		texturePrincipal.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
-		buttonChar = new Texture(Gdx.files.internal("data/BotonPers.png"));
-		buttonMap = new Texture(Gdx.files.internal("data/BotonMapa.png"));
-		buttonQuest = new Texture(Gdx.files.internal("data/BotonQuest.png"));
-		buttonMini = new Texture(Gdx.files.internal("data/BotonMiniG.png"));
-		buttonConf = new Texture(Gdx.files.internal("data/BotonConfig.png"));
-		buttonInv = new Texture(Gdx.files.internal("data/BotonMochila.png"));
+		texturePrincipal = LoadGamePage.get_Instance().get().get("data/backgroundmaingame.png",Texture.class);
+		buttonChar = LoadGamePage.get_Instance().get().get("data/BotonPers.png",Texture.class);
+		buttonMap = LoadGamePage.get_Instance().get().get("data/BotonMapa.png",Texture.class);
+		buttonQuest = LoadGamePage.get_Instance().get().get("data/BotonQuest.png",Texture.class);
+		buttonMini = LoadGamePage.get_Instance().get().get("data/BotonMiniG.png",Texture.class);
+		buttonConf = LoadGamePage.get_Instance().get().get("data/BotonConfig.png",Texture.class);
+		buttonInv = LoadGamePage.get_Instance().get().get("data/BotonMochila.png",Texture.class);
 		r_pers = new Rectangle(anch1,alt1,AspectRatio.x,AspectRatio.y);
 		r_map = new Rectangle(anch2,alt1,AspectRatio.x,AspectRatio.y);
 		r_quest = new Rectangle(anch3,alt1,AspectRatio.x,AspectRatio.y);
@@ -53,32 +58,24 @@ public class MainGamePage implements Screen{
 		r_conf = new Rectangle(anch3,alt2,AspectRatio.x,AspectRatio.y);
 	}
 	
-	public int botonPulsado(float x, float y){
+	public void contains(float x, float y){
 		if(r_pers.contains(x,y)){
-			//MG.cambiarScreens(1);
-			return 1;
+			MG.setScreen(CharGamePage.get_Instance());
 		}
 		if(r_map.contains(x,y)){
-			//MG.cambiarScreens(2);
-			return 2;
+			MG.setScreen(MapGamePage.get_Instance());
 		}
 		if(r_quest.contains(x,y)){
-			//MG.cambiarScreens(3);
-			return 3;
+			MG.setScreen(QuestGamePage.get_Instance());
 		}
 		if(r_game.contains(x,y)){
-			//MG.cambiarScreens(4);
-			return 4;
+			MG.setScreen(MiniGamePage.get_Instance());
 		}
 		if(r_inv.contains(x,y)){
-			//MG.cambiarScreens(5);
-			return 5;
+			MG.setScreen(InvGamePage.get_Instance());
 		}
 		if(r_conf.contains(x,y)){
-			//MG.cambiarScreens(6);
-			return 6;
-		}else{
-			return -1;
+			MG.setScreen(ConfGamePage.get_Instance());
 		}
 	}
 	
@@ -87,9 +84,7 @@ public class MainGamePage implements Screen{
 
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 1); //Gdx es una clase con la que podemos acceder a variables que hacen referencia a todos los subsitemas, como son graficos, audio, ficheros, entrada y aplicaciones
-		// gl es una variable de tipo GL, nos permite acceder a metodos de GL10, GL11 y GL20
-		//En este caso glClearColor es un bucle (game loop) que establecera el fondo de la pantalla negro (0,0,0) con transparencia 1
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		b.begin();
 		b.draw(texturePrincipal,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
@@ -100,6 +95,11 @@ public class MainGamePage implements Screen{
 		b.draw(buttonInv, anch2, alt2,AspectRatio.x,AspectRatio.y);
 		b.draw(buttonConf, anch3,alt2,AspectRatio.x,AspectRatio.y);
 		b.end();
+		if(Gdx.input.justTouched()){
+			Vector3 posicion = new Vector3(Gdx.input.getX(),Gdx.input.getY(),0);
+			camera.unproject(posicion);
+			contains(posicion.x,posicion.y);
+		}
 	}
 
 	@Override

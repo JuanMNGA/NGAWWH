@@ -7,36 +7,48 @@ import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector3;
 
 public class StylistGamePage implements Screen{
+	
+	private static StylistGamePage pagina = new StylistGamePage();
 	
 	private OrthographicCamera camera;
 	private Texture textureStylist;
 	private SpriteBatch b;
 	private MainGame MG;
 	
-	public StylistGamePage(MainGame mg, OrthographicCamera camera){
+	private StylistGamePage(){}
+	
+	public static StylistGamePage get_Instance(){
+		return pagina;
+	}
+	
+	public void load(MainGame mg, OrthographicCamera camera){
 		MG = mg;
 		this.camera = camera;
 		camera.update();
 		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.setProjectionMatrix(camera.combined);
-		textureStylist = new Texture(Gdx.files.internal("data/backgroundstilyst.png"));
-		textureStylist.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
+		textureStylist = LoadGamePage.get_Instance().get().get("data/backgroundstilyst.png",Texture.class);
+	}
+	
+	public void contains(float x, float y){
+		MG.setScreen(MainGamePage.get_Instance());
 	}
 
 	@Override
 	public void render(float delta) {
-		if(Gdx.input.isTouched()){
-			MG.cambiarScreens(0);
-		}
-		Gdx.gl.glClearColor(0, 0, 0, 1); //Gdx es una clase con la que podemos acceder a variables que hacen referencia a todos los subsitemas, como son graficos, audio, ficheros, entrada y aplicaciones
-		// gl es una variable de tipo GL, nos permite acceder a metodos de GL10, GL11 y GL20
-		//En este caso glClearColor es un bucle (game loop) que establecera el fondo de la pantalla negro (0,0,0) con transparencia 1
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		b.begin();
 		b.draw(textureStylist,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.end();
+		if(Gdx.input.justTouched()){
+			Vector3 posicion = new Vector3(Gdx.input.getX(), Gdx.input.getY(),0);
+			camera.unproject(posicion);
+			contains(posicion.x,posicion.y);
+		}
 		
 	}
 

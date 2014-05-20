@@ -10,24 +10,29 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class ConfGamePage implements Screen{
 	
+	private static ConfGamePage pagina = new ConfGamePage();
+	
 	private MainGame MG;
 	private OrthographicCamera camera;
 	private Texture textureOptions;
 	private SpriteBatch b;
 	
-	public ConfGamePage(MainGame mg, OrthographicCamera camera){
+	private ConfGamePage(){}
+	
+	public static ConfGamePage get_Instance(){
+		return pagina;
+	}
+	
+	public void load(MainGame mg, OrthographicCamera camera){
 		this.camera = camera;
 		camera.update();
 		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.setProjectionMatrix(camera.combined);
-		textureOptions = new Texture(Gdx.files.internal("data/backgroundstilyst.png"));
-		textureOptions.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureOptions = LoadGamePage.get_Instance().get().get("data/backgroundstilyst.png",Texture.class);
 	}
 	@Override
 	public void render(float delta) {
-		Gdx.gl.glClearColor(0, 0, 0, 1); //Gdx es una clase con la que podemos acceder a variables que hacen referencia a todos los subsitemas, como son graficos, audio, ficheros, entrada y aplicaciones
-		// gl es una variable de tipo GL, nos permite acceder a metodos de GL10, GL11 y GL20
-		//En este caso glClearColor es un bucle (game loop) que establecera el fondo de la pantalla negro (0,0,0) con transparencia 1
+		Gdx.gl.glClearColor(0, 0, 0, 1);
 		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
 		b.begin();
 		b.draw(textureOptions,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());

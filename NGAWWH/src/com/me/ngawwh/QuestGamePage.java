@@ -10,8 +10,11 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector3;
 
 public class QuestGamePage implements Screen{
+	
+	private static QuestGamePage pagina = new QuestGamePage();
 	
 	private MainGame MG;
 	private OrthographicCamera camera;
@@ -24,29 +27,28 @@ public class QuestGamePage implements Screen{
 	private float xTextos;
 	private float[] yTextos;
 	
-	public QuestGamePage(MainGame mg, OrthographicCamera camera){
+	private QuestGamePage(){}
+	
+	public static QuestGamePage get_Instance(){
+		return pagina;
+	}
+	
+	public void load(MainGame mg, OrthographicCamera camera){
 		MG = mg;
 		this.camera = camera;
 		camera.update();
 		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.setProjectionMatrix(camera.combined);
-		textureQuest = new Texture(Gdx.files.internal("data/backgroundquestmenu.png"));
-		textureQuest.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		textureQuest2 = new Texture(Gdx.files.internal("data/backgroundquestmenu2.png"));
-		textureQuest2.setFilter(TextureFilter.Linear, TextureFilter.Linear);
-		textButton = new Texture(Gdx.files.internal("data/basicbutton.png"));
-		textButton.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
+		textureQuest = LoadGamePage.get_Instance().get().get("data/backgroundquestmenu.png",Texture.class);
+		textureQuest2 = LoadGamePage.get_Instance().get().get("data/backgroundquestmenu2.png",Texture.class);
+		textButton = LoadGamePage.get_Instance().get().get("data/basicbutton.png",Texture.class);
 		Misiones = new ArrayList<Quest>();
 		cargarMisiones();
-		fuente = new BitmapFont(Gdx.files.internal("data/arial.fnt"), Gdx.files.internal("data/arial.png"), false);
+		fuente = LoadGamePage.get_Instance().get().get("data/arial.fnt",BitmapFont.class);
 		xTextos = Gdx.graphics.getWidth()*(0.15f);
 		yTextos = new float[20];
 		//Coordenadas Y de los nombres de las quests
 		yTextos[0] = Gdx.graphics.getHeight()*(0.9f);
-	}
-	
-	public int botonPulsado(float x, float y){
-		return 8;
 	}
 	
 	private void cargarMisiones(){
@@ -58,6 +60,10 @@ public class QuestGamePage implements Screen{
 		Misiones.get(0).set_Contenido("Te levantas una mañana, con el cuerpo pesado, estás en la calle, sin dinero, y con algo de comida en un bolsillo.\nAlguien te ve, grita y sale corriendo. Sales de tu pequeño sueño, entre un mar de sangre y un cuerpo degollado a tu lado.\nEsa persona alertó a los guardas, debes escapar de la ciudad.");
 		//Misiones de Silfides
 		//Misiones de Krevacheg
+	}
+	
+	public void contains(float x, float y){
+		MG.setScreen(QuestSelGamePage.get_Instance());
 	}
 
 	@Override
@@ -73,6 +79,11 @@ public class QuestGamePage implements Screen{
 		fuente.draw(b,Misiones.get(0).get_Nombre(),xTextos,yTextos[0]);
 		b.draw(textureQuest2,0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		b.end();
+		if(Gdx.input.justTouched()){
+			Vector3 posicion = new Vector3(Gdx.input.getX(),Gdx.input.getY(),0);
+			camera.unproject(posicion);
+			contains(posicion.x,posicion.y);
+		}
 		
 	}
 

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.me.ngawwh.LoadGameLogic&apos; to &apos;LoadGameCoord&apos;&#x0A;- Original project: &apos;NGAWWH&apos;&#x0A;- Original element: &apos;com.me.ngawwh.LoadGameLogic&apos;&#x0A;- Renamed element: &apos;com.me.ngawwh.LoadGameCoord&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LoadGameLogic&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.me.ngawwh{LoadGameLogic.java[LoadGameLogic" matchStrategy="1" name="LoadGameCoord" qualified="false" references="true" similarDeclarations="false" stamp="1400572093676" textual="false" version="1.0"/>
+</session>

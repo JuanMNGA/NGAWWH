@@ -4,16 +4,19 @@
 <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.ui.Button"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.scenes.scene2d.ui.Button.ButtonStyle"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.Input.Keys"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.SpriteBatch"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.OrthographicCamera"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture.TextureFilter"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.Screen"/>
-<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector3"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.assets.AssetManager"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Color"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Rectangle"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Screen"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.GL10"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.SpriteBatch"/>
 <fullyQualifiedTypeName name="com.badlogic.gdx.graphics.g2d.BitmapFont"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.assets.loaders.TextureLoader.TextureParameter"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.graphics.Texture.TextureFilter"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector2"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.Gdx"/>
+<fullyQualifiedTypeName name="com.badlogic.gdx.math.Vector3"/>
 </qualifiedTypeNameHistroy>

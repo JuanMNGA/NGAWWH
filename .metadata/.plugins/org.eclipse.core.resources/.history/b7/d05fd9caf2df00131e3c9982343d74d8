@@ -1,0 +1,189 @@
+package com.me.ngawwh;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Rectangle;
+
+public class GameScreen implements Screen{
+	private static GameScreen pagina = new GameScreen();
+	private int Screen_Index;
+	private SpriteBatch b;
+	private BitmapFont fuente;
+	
+	private GameScreen(){
+		Screen_Index = 0;
+		b  = new SpriteBatch();
+		fuente = new BitmapFont(Gdx.files.internal("data/arial.fnt"), Gdx.files.internal("data/arial.png"), false);
+		fuente.setColor(Color.WHITE);
+		fuente.setScale(0.7f);
+		LoadGamePage.get_Instance().load();
+	}
+	
+	public static GameScreen get_Instance(){
+		return pagina;
+	}
+	
+	public void change_SIndex(int i){
+		Screen_Index = i;
+	}
+	public int get_SIndex(){
+		return Screen_Index;
+	}
+	
+	private void load_Loading(){
+		if(LoadGamePage.get_Instance().get().update()){
+			Screen_Index=1;
+		}else{
+			fuente.draw(b,"Cargando..."+new String(String.valueOf(LoadGamePage.get_Instance().progress()*100)+"%"),20,40);
+		}
+	}
+	
+	private void load_Title_Data(){
+	}
+	
+	private void load_Title(){
+		b.draw(LoadGamePage.get_Instance().get().get("data/backgroundInicio.png",Texture.class),0,0,Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		b.draw(LoadGamePage.get_Instance().get().get("data/BotonesInicio.png",Texture.class), LoadGameLogic.get_Instance().get_Title_Coord()[0], LoadGameLogic.get_Instance().get_Title_Coord()[3], LoadGameLogic.get_Instance().get_Title_Coord()[4],LoadGameLogic.get_Instance().get_Title_Coord()[5]);
+		b.draw(LoadGamePage.get_Instance().get().get("data/BotonesInicio.png",Texture.class), LoadGameLogic.get_Instance().get_Title_Coord()[1], LoadGameLogic.get_Instance().get_Title_Coord()[3], LoadGameLogic.get_Instance().get_Title_Coord()[4],LoadGameLogic.get_Instance().get_Title_Coord()[5]);
+		b.draw(LoadGamePage.get_Instance().get().get("data/BotonesInicio.png",Texture.class), LoadGameLogic.get_Instance().get_Title_Coord()[2], LoadGameLogic.get_Instance().get_Title_Coord()[3], LoadGameLogic.get_Instance().get_Title_Coord()[4],LoadGameLogic.get_Instance().get_Title_Coord()[5]);
+		fuente.setColor(Color.WHITE);
+		fuente.draw(b,"Nuevo",LoadGameLogic.get_Instance().get_Title_Coord()[0]+(Gdx.graphics.getWidth()*(0.07f)),LoadGameLogic.get_Instance().get_Title_Coord()[3]+(Gdx.graphics.getHeight()*(0.16f)));
+		fuente.draw(b,"Continuar",LoadGameLogic.get_Instance().get_Title_Coord()[1]+(Gdx.graphics.getWidth()*(0.04f)),LoadGameLogic.get_Instance().get_Title_Coord()[3]+(Gdx.graphics.getHeight()*(0.16f)));
+		fuente.draw(b,"Salir",LoadGameLogic.get_Instance().get_Title_Coord()[2]+(Gdx.graphics.getWidth()*(0.08f)),LoadGameLogic.get_Instance().get_Title_Coord()[3]+(Gdx.graphics.getHeight()*(0.16f)));
+		
+	}
+	
+	private void load_Stylist(){
+		
+	}
+	
+	private void load_Main(){
+		
+	}
+	
+	private void load_Character(){
+		
+	}
+	
+	private void load_Map(){
+		
+	}
+	
+	private void load_Quest(){
+		
+	}
+	
+	private void load_Quest_Info(){
+		
+	}
+	
+	private void load_MiniGame(){
+		
+	}
+	
+	private void load_Inventory(){
+		
+	}
+	
+	private void load_Config(){
+		
+	}
+
+	@Override
+	public void render(float delta) {
+		Gdx.gl.glClearColor(0, 0, 0, 1);
+		Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+		b.begin();
+		switch(Screen_Index){
+		case 0:
+			//Pantalla carga
+			load_Loading();
+			break;
+		case 1:
+			//Pantalla titulo
+			load_Title();
+			break;
+		case 2:
+			//Pantalla estilista
+			load_Stylist();
+			break;
+		case 3:
+			//Pantalla principal
+			load_Main();
+			break;
+		case 4:
+			//Pantalla informacion
+			load_Character();
+			break;
+		case 5:
+			//Pantalla mapa
+			load_Map();
+			break;
+		case 6:
+			//Pantalla quest
+			load_Quest();
+			break;
+		case 7:
+			//Pantalla quest info
+			load_Quest_Info();
+			break;
+		case 8:
+			//Pantalla minijuego
+			load_MiniGame();
+			break;
+		case 9:
+			//Pantalla inventario
+			load_Inventory();
+			break;
+		case 10:
+			//Pantalla configuracion
+			load_Config();
+			break;
+			
+		}
+		b.end();
+		
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void hide() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pause() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resume() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

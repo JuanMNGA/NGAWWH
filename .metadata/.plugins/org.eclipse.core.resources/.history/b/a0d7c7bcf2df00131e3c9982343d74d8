@@ -1,0 +1,32 @@
+package com.me.ngawwh;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.math.Rectangle;
+
+public class LoadGameLogic {
+	private static LoadGameLogic logica = new LoadGameLogic();
+	private float[] coord_Title = new float[6];
+	private Rectangle[] coord_Title_Rect = new Rectangle[3];
+	
+	private LoadGameLogic(){
+		//Coordenadas botones titulo
+		coord_Title[0] = Gdx.graphics.getWidth()*(0.1125f);
+		coord_Title[1] = Gdx.graphics.getWidth()*(0.375f);
+		coord_Title[2] = Gdx.graphics.getWidth()*(0.6375f);
+		coord_Title[3] = Gdx.graphics.getHeight()*(0.125f);
+		coord_Title[4] = Gdx.graphics.getWidth()*(0.25f);
+		coord_Title[5] = Gdx.graphics.getHeight()*(0.25f);
+		//Coordenadas rectangulos titulo
+		coord_Title_Rect[0] = new Rectangle(coord_Title[0],coord_Title[3],coord_Title[4],coord_Title[5]);
+		coord_Title_Rect[1] = new Rectangle(coord_Title[1],coord_Title[3],coord_Title[4],coord_Title[5]);
+		coord_Title_Rect[2] = new Rectangle(coord_Title[2],coord_Title[3],coord_Title[4],coord_Title[5]);
+	}
+	
+	public static LoadGameLogic get_Instance(){
+		return logica;
+	}
+	
+	public float[] get_Title_Coord(){
+		return coord_Title;
+	}
+}

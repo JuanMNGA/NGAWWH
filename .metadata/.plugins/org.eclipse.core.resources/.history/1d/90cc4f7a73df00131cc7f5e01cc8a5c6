@@ -1,0 +1,161 @@
+package com.me.ngawwh;
+
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
+public class GameScreen implements Screen{
+	private static GameScreen pagina = new GameScreen();
+	private int Screen_Index = 0;
+	private SpriteBatch b;
+	
+	private GameScreen(){
+		b  = new SpriteBatch();
+		LoadGamePage.get_Instance().load();
+	}
+	
+	public static GameScreen get_Instance(){
+		return pagina;
+	}
+	
+	public void change_SIndex(int i){
+		Screen_Index = i;
+	}
+	public int get_SIndex(){
+		return Screen_Index;
+	}
+	
+	private void load_Loading(){
+		
+	}
+	
+	private void load_Title(){
+		
+	}
+	
+	private void load_Stylist(){
+		
+	}
+	
+	private void load_Main(){
+		
+	}
+	
+	private void load_Character(){
+		
+	}
+	
+	private void load_Map(){
+		
+	}
+	
+	private void load_Quest(){
+		
+	}
+	
+	private void load_Quest_Info(){
+		
+	}
+	
+	private void load_MiniGame(){
+		
+	}
+	
+	private void load_Inventory(){
+		
+	}
+	
+	private void load_Config(){
+		
+	}
+
+	@Override
+	public void render(float delta) {
+		b.begin();
+		switch(Screen_Index){
+		case 0:
+			//Pantalla carga
+			load_Loading();
+			break;
+		case 1:
+			//Pantalla titulo
+			load_Title();
+			break;
+		case 2:
+			//Pantalla estilista
+			load_Stylist();
+			break;
+		case 3:
+			//Pantalla principal
+			load_Main();
+			break;
+		case 4:
+			//Pantalla informacion
+			load_Character();
+			break;
+		case 5:
+			//Pantalla mapa
+			load_Map();
+			break;
+		case 6:
+			//Pantalla quest
+			load_Quest();
+			break;
+		case 7:
+			//Pantalla quest info
+			load_Quest_Info();
+			break;
+		case 8:
+			//Pantalla minijuego
+			load_MiniGame();
+			break;
+		case 9:
+			//Pantalla inventario
+			load_Inventory();
+			break;
+		case 10:
+			//Pantalla configuracion
+			load_Config();
+			break;
+			
+		}
+		b.end();
+		
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void show() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void hide() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void pause() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void resume() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void dispose() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,20 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  Internal Error (sharedRuntime.cpp:814), pid=9932, tid=1722301248
+#  guarantee(cb->is_adapter_blob() || cb->is_method_handles_adapter_blob()) failed: exception happened outside interpreter, nmethods and vtable stubs (1)
+#
+# JRE version: OpenJDK Runtime Environment (7.0_51) (build 1.7.0_51-b00)
+# Java VM: OpenJDK Server VM (24.45-b08 mixed mode linux-x86 )
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please include
+# instructions on how to reproduce the bug and visit:
+#   http://icedtea.classpath.org/bugzilla
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x6b8ed000):  JavaThread "LWJGL Application" [_thread_in_Java, id=9953, stack(0x66a33000,0x66a84000)]
+
+Stack: [0x66a33000,0x66a84000]
