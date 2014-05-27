@@ -14,8 +14,6 @@ import com.badlogic.gdx.math.Vector3;
 
 public class QuestGamePage implements Screen{
 	
-	private static QuestGamePage pagina = new QuestGamePage();
-	
 	private MainGame MG;
 	private OrthographicCamera camera;
 	private Texture textureQuest;
@@ -27,28 +25,36 @@ public class QuestGamePage implements Screen{
 	private float xTextos;
 	private float[] yTextos;
 	
-	private QuestGamePage(){}
+	private Loader load;
 	
-	public static QuestGamePage get_Instance(){
-		return pagina;
+	private boolean isLoaded = false;
+	
+	public QuestGamePage(){}
+	
+	public boolean isLoad(){
+		return isLoaded;
 	}
 	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		MG = mg;
 		this.camera = camera;
 		camera.update();
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		this.load = load;
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		textureQuest = LoadGamePage.get_Instance().get().get("data/backgroundquestmenu.png",Texture.class);
-		textureQuest2 = LoadGamePage.get_Instance().get().get("data/backgroundquestmenu2.png",Texture.class);
-		textButton = LoadGamePage.get_Instance().get().get("data/basicbutton.png",Texture.class);
+		textureQuest = load.manager.get("data/backgroundquestmenu.png",Texture.class);
+		textureQuest2 = load.manager.get("data/backgroundquestmenu2.png",Texture.class);
+		textButton = load.manager.get("data/basicbutton.png",Texture.class);
 		Misiones = new ArrayList<Quest>();
 		cargarMisiones();
-		fuente = LoadGamePage.get_Instance().get().get("data/arial.fnt",BitmapFont.class);
+		fuente = load.manager.get("data/arial.fnt",BitmapFont.class);
 		xTextos = Gdx.graphics.getWidth()*(0.15f);
 		yTextos = new float[20];
 		//Coordenadas Y de los nombres de las quests
 		yTextos[0] = Gdx.graphics.getHeight()*(0.9f);
+		if(!load.questsel.isLoad())
+			load.questsel.load(MG,MG.Camara(),load);
+		isLoaded = true;
 	}
 	
 	private void cargarMisiones(){
@@ -63,7 +69,7 @@ public class QuestGamePage implements Screen{
 	}
 	
 	public void contains(float x, float y){
-		MG.setScreen(QuestSelGamePage.get_Instance());
+		MG.setScreen(load.questsel);
 	}
 
 	@Override
@@ -114,7 +120,6 @@ public class QuestGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

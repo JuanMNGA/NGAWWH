@@ -11,25 +11,28 @@ import com.badlogic.gdx.math.Vector3;
 
 public class InvGamePage implements Screen{
 	
-	private static InvGamePage pagina = new InvGamePage();
-
 	private MainGame MG;
 	private OrthographicCamera camera;
 	private Texture textureInventory;
 	private SpriteBatch b;
+	private Loader load;
 	
-	private InvGamePage(){}
+	private boolean isLoaded = false;
 	
-	public static InvGamePage get_Instance(){
-		return pagina;
+	public InvGamePage(){}
+	
+	public boolean isLoad(){
+		return isLoaded;
 	}
 	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		this.camera = camera;
 		camera.update();
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		this.load = load;
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		textureInventory = LoadGamePage.get_Instance().get().get("data/backgroundquestmenu.png",Texture.class);
+		textureInventory = load.manager.get("data/backgroundquestmenu.png",Texture.class);
+		isLoaded = true;
 	}
 	
 	public void contains(float x, float y){
@@ -76,7 +79,6 @@ public class InvGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

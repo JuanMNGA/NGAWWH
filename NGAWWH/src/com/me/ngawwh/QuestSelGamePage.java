@@ -11,27 +11,30 @@ import com.badlogic.gdx.math.Vector3;
 
 public class QuestSelGamePage implements Screen{
 	
-	private static QuestSelGamePage pagina = new QuestSelGamePage();
-	
 	private OrthographicCamera camera;
 	private Texture textureQuestSel;
 	private SpriteBatch b;
 	private MainGame MG;
 	
-	private QuestSelGamePage(){}
+	private Loader load;
 	
-	public static QuestSelGamePage get_Instance(){
-		return pagina;
+	private boolean isLoaded = false;
+	
+	public QuestSelGamePage(){}
+	
+	public boolean isLoad(){
+		return isLoaded;
 	}
 	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		MG = mg;
 		this.camera = camera;
 		camera.update();
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		this.load = load;
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		textureQuestSel = new Texture(Gdx.files.internal("data/backgroundquestinfo.png"));
-		textureQuestSel.setFilter(TextureFilter.Linear, TextureFilter.Linear);
+		textureQuestSel = load.manager.get("data/backgroundquestinfo.png",Texture.class);
+		isLoaded = true;
 	}
 	
 	public void contains(float x, float y){
@@ -80,7 +83,6 @@ public class QuestSelGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

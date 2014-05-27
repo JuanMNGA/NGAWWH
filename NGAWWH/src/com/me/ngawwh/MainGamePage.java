@@ -22,18 +22,20 @@ public class MainGamePage implements Screen{
 	private Rectangle r_pers, r_map, r_quest, r_game, r_conf, r_inv;
 	private float alt1, alt2, anch1, anch2, anch3;
 	private Vector2 AspectRatio;
+	private Loader load;
 	
-	private static MainGamePage pagina = new MainGamePage();
+	private boolean isLoaded = false;
 	
-	private MainGamePage(){}
+	public MainGamePage(){}
 	
-	public static MainGamePage get_Instance(){
-		return pagina;
+	public boolean isLoad(){
+		return isLoaded;
 	}
 	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		this.camera = camera;
 		camera.update();
+		this.load = load;
 		anch1 = Gdx.graphics.getWidth()*(0.45375f);
 		anch2 = Gdx.graphics.getWidth()*(0.64f);
 		anch3 = Gdx.graphics.getWidth()*(0.825f);
@@ -41,41 +43,54 @@ public class MainGamePage implements Screen{
 		alt2 = Gdx.graphics.getHeight()*(0.07f);
 		AspectRatio = new Vector2(Gdx.graphics.getWidth()*(0.1625f),(Gdx.graphics.getHeight()*(0.42f)));
 		MG = mg;
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		texturePrincipal = LoadGamePage.get_Instance().get().get("data/backgroundmaingame.png",Texture.class);
-		buttonChar = LoadGamePage.get_Instance().get().get("data/BotonPers.png",Texture.class);
-		buttonMap = LoadGamePage.get_Instance().get().get("data/BotonMapa.png",Texture.class);
-		buttonQuest = LoadGamePage.get_Instance().get().get("data/BotonQuest.png",Texture.class);
-		buttonMini = LoadGamePage.get_Instance().get().get("data/BotonMiniG.png",Texture.class);
-		buttonConf = LoadGamePage.get_Instance().get().get("data/BotonConfig.png",Texture.class);
-		buttonInv = LoadGamePage.get_Instance().get().get("data/BotonMochila.png",Texture.class);
+		texturePrincipal = load.manager.get("data/backgroundmaingame.png",Texture.class);
+		buttonChar = load.manager.get("data/BotonPers.png",Texture.class);
+		buttonMap = load.manager.get("data/BotonMapa.png",Texture.class);
+		buttonQuest = load.manager.get("data/BotonQuest.png",Texture.class);
+		buttonMini = load.manager.get("data/BotonMiniG.png",Texture.class);
+		buttonConf = load.manager.get("data/BotonConfig.png",Texture.class);
+		buttonInv = load.manager.get("data/BotonMochila.png",Texture.class);
 		r_pers = new Rectangle(anch1,alt1,AspectRatio.x,AspectRatio.y);
 		r_map = new Rectangle(anch2,alt1,AspectRatio.x,AspectRatio.y);
 		r_quest = new Rectangle(anch3,alt1,AspectRatio.x,AspectRatio.y);
 		r_game = new Rectangle(anch1,alt2,AspectRatio.x,AspectRatio.y);
 		r_inv = new Rectangle(anch2,alt2,AspectRatio.x,AspectRatio.y);
 		r_conf = new Rectangle(anch3,alt2,AspectRatio.x,AspectRatio.y);
+		if(!load.personaje.isLoad())
+			load.personaje.load(MG,MG.Camara(),load);
+		if(!load.mapa.isLoad())
+			load.mapa.load(MG,MG.Camara(),load);
+		if(!load.minig.isLoad())
+			load.minig.load(MG,MG.Camara(),load);
+		if(!load.quest.isLoad())
+			load.quest.load(MG,MG.Camara(),load);
+		if(!load.inventario.isLoad())
+			load.inventario.load(MG,MG.Camara(),load);
+		if(!load.config.isLoad())
+			load.config.load(MG,MG.Camara(),load);
+		isLoaded = true;
 	}
 	
 	public void contains(float x, float y){
 		if(r_pers.contains(x,y)){
-			MG.setScreen(CharGamePage.get_Instance());
+			MG.setScreen(load.personaje);
 		}
 		if(r_map.contains(x,y)){
-			MG.setScreen(MapGamePage.get_Instance());
+			MG.setScreen(load.mapa);
 		}
 		if(r_quest.contains(x,y)){
-			MG.setScreen(QuestGamePage.get_Instance());
+			MG.setScreen(load.quest);
 		}
 		if(r_game.contains(x,y)){
-			MG.setScreen(MiniGamePage.get_Instance());
+			MG.setScreen(load.minig);
 		}
 		if(r_inv.contains(x,y)){
-			MG.setScreen(InvGamePage.get_Instance());
+			MG.setScreen(load.inventario);
 		}
 		if(r_conf.contains(x,y)){
-			MG.setScreen(ConfGamePage.get_Instance());
+			MG.setScreen(load.config);
 		}
 	}
 	
@@ -129,7 +144,6 @@ public class MainGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 }

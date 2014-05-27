@@ -10,25 +10,28 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class ConfGamePage implements Screen{
 	
-	private static ConfGamePage pagina = new ConfGamePage();
-	
 	private MainGame MG;
 	private OrthographicCamera camera;
 	private Texture textureOptions;
 	private SpriteBatch b;
+	private Loader load;
 	
-	private ConfGamePage(){}
+	private boolean isLoaded = false;
 	
-	public static ConfGamePage get_Instance(){
-		return pagina;
+	public ConfGamePage(){}
+	
+	public boolean isLoad(){
+		return isLoaded;
 	}
 	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		this.camera = camera;
 		camera.update();
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		this.load = load;
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		textureOptions = LoadGamePage.get_Instance().get().get("data/backgroundstilyst.png",Texture.class);
+		textureOptions = load.manager.get("data/backgroundstilyst.png",Texture.class);
+		isLoaded = true;
 	}
 	@Override
 	public void render(float delta) {
@@ -67,7 +70,6 @@ public class ConfGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

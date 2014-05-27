@@ -11,25 +11,28 @@ import com.badlogic.gdx.math.Vector3;
 
 public class MiniGamePage implements Screen{
 	
-	private static MiniGamePage pagina = new MiniGamePage();
-	
 	private MainGame MG;
 	private OrthographicCamera camera;
 	private Texture textureMinigame;
 	private SpriteBatch b;
+	private Loader load;
 	
-	private MiniGamePage(){}
+	private boolean isLoaded = false;
 	
-	public static MiniGamePage get_Instance(){
-		return pagina;
+	public MiniGamePage(){}
+	
+	public boolean isLoad(){
+		return isLoaded;
 	}
 	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		this.camera = camera;
 		camera.update();
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		this.load = load;
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		textureMinigame = LoadGamePage.get_Instance().get().get("data/backgroundminigame.png",Texture.class);
+		textureMinigame = load.manager.get("data/backgroundminigame.png",Texture.class);
+		isLoaded = true;
 	}
 	
 	public void contains(float x, float y){
@@ -77,7 +80,6 @@ public class MiniGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

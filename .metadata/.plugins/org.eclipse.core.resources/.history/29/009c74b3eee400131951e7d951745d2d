@@ -1,0 +1,79 @@
+package com.me.ngawwh;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.TextureLoader.TextureParameter;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+
+public class LoadGamePage {
+	private AssetManager manager = new AssetManager();
+	private static LoadGamePage Loader = new LoadGamePage();
+	private TextureParameter param = new TextureParameter();
+	private Texture[] Texturas = new Texture[16];
+	private BitmapFont fuente;
+	
+	private LoadGamePage(){
+		param.genMipMaps = true;
+		param.minFilter = TextureFilter.Nearest;
+		//Carga de Backgrounds
+		/*manager.load("data/backgroundInicio.png",Texture.class,param);
+		manager.load("data/backgroundmaingame.png",Texture.class,param);
+		manager.load("data/backgroundstilyst.png",Texture.class,param);
+		manager.load("data/backgroundquestmenu.png",Texture.class,param);
+		manager.load("data/backgroundquestmenu2.png",Texture.class,param);
+		manager.load("data/backgroundquestinfo.png",Texture.class,param);
+		manager.load("data/backgroundminigame.png",Texture.class,param);
+		manager.load("data/backgroundselectmap.png",Texture.class,param);
+		//Carga de Botones
+		manager.load("data/BotonesInicio.png",Texture.class,param);
+		manager.load("data/basicbutton.png",Texture.class,param);
+		manager.load("data/BotonPers.png",Texture.class,param);
+		manager.load("data/BotonMapa.png",Texture.class,param);
+		manager.load("data/BotonQuest.png",Texture.class,param);
+		manager.load("data/BotonMiniG.png",Texture.class,param);
+		manager.load("data/BotonConfig.png",Texture.class,param);
+		manager.load("data/BotonMochila.png",Texture.class,param);*/
+		//Carga de Backgrounds
+		Texturas[0] = new Texture("data/backgroundInicio.png");
+		Texturas[1] = new Texture("data/backgroundmaingame.png");
+		Texturas[2] = new Texture("data/backgroundstilyst.png");
+		Texturas[3] = new Texture("data/backgroundquestmenu.png");
+		Texturas[4] = new Texture("data/backgroundquestmenu2.png");
+		Texturas[5] = new Texture("data/backgroundquestinfo.png");
+		Texturas[6] = new Texture("data/backgroundminigame.png");
+		Texturas[7] = new Texture("data/backgroundselectmap.png");
+		//Carga de Botones
+		Texturas[8] = new Texture("data/BotonesInicio.png");
+		Texturas[9] = new Texture("data/basicbutton.png");
+		Texturas[10] = new Texture("data/BotonPers.png");
+		Texturas[11] = new Texture("data/BotonMapa.png");
+		Texturas[12] = new Texture("data/BotonQuest.png");
+		Texturas[13] = new Texture("data/BotonMiniG.png");
+		Texturas[14] = new Texture("data/BotonConfig.png");
+		Texturas[15] = new Texture("data/BotonMochila.png");
+		for(int i=0;i<16;i++){
+			Texturas[i].setFilter(TextureFilter.Nearest,TextureFilter.Nearest);
+		}
+		//Carga de Fuentes
+		//manager.load("data/arial.fnt",BitmapFont.class);
+		fuente = new BitmapFont(Gdx.files.internal("data/arial.fnt"), Gdx.files.internal("data/arial.png"), false);
+	}
+	
+	public static LoadGamePage get_Instance(){
+		return Loader;
+	}
+	
+	public boolean update(){
+		return manager.update();
+	}
+	
+	public float progress(){
+		return manager.getProgress();
+	}
+	
+	public Texture get(int i){
+		return Texturas[i];
+	}
+}

@@ -1,33 +1,25 @@
 package com.me.ngawwh;
 
-import com.badlogic.gdx.ApplicationListener;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Application.ApplicationType;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.InputProcessor;
-import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.assets.AssetManager;
-import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.Texture.TextureFilter;
-import com.badlogic.gdx.graphics.g2d.BitmapFont;
-import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.math.Vector3;
 
 public class MainGame extends Game implements InputProcessor {
 	private OrthographicCamera camera;
+	private Loader load;
 	
 	@Override
 	public void create() {
+		load  = new Loader();
 		camera = new OrthographicCamera(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
 		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 		Gdx.input.setInputProcessor(this);
         Gdx.input.setCatchBackKey(true);
-		Loader.get_Instance().Assign_MG(this);
-		setScreen(Loader.get_Instance());
+		load.Assign_MG(this);
+		setScreen(load);
 	}
 	
 	public OrthographicCamera Camara(){
@@ -62,25 +54,25 @@ public class MainGame extends Game implements InputProcessor {
 	@Override
 	public boolean keyDown(int keycode) {
 		if(Gdx.app.getType() == ApplicationType.Android){
-			if(this.getScreen().hashCode() != MainGamePage.get_Instance().hashCode() && this.getScreen().hashCode() != StartGamePage.get_Instance().hashCode() && this.getScreen().hashCode() != StylistGamePage.get_Instance().hashCode() && keycode == Keys.BACK){
-				if(this.getScreen().hashCode() == QuestSelGamePage.get_Instance().hashCode() && keycode == Keys.BACK){
-					setScreen(QuestGamePage.get_Instance());
+			if(this.getScreen().hashCode() != load.principal.hashCode() && this.getScreen().hashCode() != load.inicio.hashCode() && this.getScreen().hashCode() != load.estilista.hashCode() && keycode == Keys.BACK){
+				if(this.getScreen().hashCode() == load.questsel.hashCode() && keycode == Keys.BACK){
+					setScreen(load.quest);
 				}else{
-					setScreen(MainGamePage.get_Instance());
+					setScreen(load.principal);
 				}
 			}else{
-					setScreen(StartGamePage.get_Instance());
+					setScreen(load.inicio);
 				//Gdx.input.setCatchBackKey(false);
 			}
 		}else{
-			if(this.getScreen().hashCode() != MainGamePage.get_Instance().hashCode() && this.getScreen().hashCode() != StartGamePage.get_Instance().hashCode() && this.getScreen().hashCode() != StylistGamePage.get_Instance().hashCode() && keycode == Keys.BACKSPACE){
-				if(this.getScreen().hashCode() == QuestSelGamePage.get_Instance().hashCode() && keycode == Keys.BACKSPACE){
-					setScreen(QuestGamePage.get_Instance());
+			if(this.getScreen().hashCode() != load.principal.hashCode() && this.getScreen().hashCode() != load.inicio.hashCode() && this.getScreen().hashCode() != load.estilista.hashCode() && keycode == Keys.BACKSPACE){
+				if(this.getScreen().hashCode() == load.questsel.hashCode() && keycode == Keys.BACKSPACE){
+					setScreen(load.quest);
 				}else{
-					setScreen(MainGamePage.get_Instance());
+					setScreen(load.principal);
 				}
 			}else{
-				setScreen(StartGamePage.get_Instance());
+					setScreen(load.inicio);
 				//Gdx.input.setCatchBackKey(false);
 			}
 		}

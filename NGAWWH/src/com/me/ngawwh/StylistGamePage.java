@@ -11,30 +11,35 @@ import com.badlogic.gdx.math.Vector3;
 
 public class StylistGamePage implements Screen{
 	
-	private static StylistGamePage pagina = new StylistGamePage();
-	
 	private OrthographicCamera camera;
 	private Texture textureStylist;
 	private SpriteBatch b;
 	private MainGame MG;
+	private boolean isLoaded = false;
 	
-	private StylistGamePage(){}
+	private Loader load;
 	
-	public static StylistGamePage get_Instance(){
-		return pagina;
+	public StylistGamePage(){}
+	
+	public boolean isLoad(){
+		return isLoaded;
 	}
 	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		MG = mg;
 		this.camera = camera;
 		camera.update();
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		this.load = load;
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		textureStylist = LoadGamePage.get_Instance().get().get("data/backgroundstilyst.png",Texture.class);
+		textureStylist = load.manager.get("data/backgroundstilyst.png",Texture.class);
+		if(!load.principal.isLoad())
+			load.principal.load(MG,MG.Camara(),load);
+		isLoaded = true;
 	}
 	
 	public void contains(float x, float y){
-		MG.setScreen(MainGamePage.get_Instance());
+		MG.setScreen(load.principal);
 	}
 
 	@Override
@@ -79,7 +84,6 @@ public class StylistGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

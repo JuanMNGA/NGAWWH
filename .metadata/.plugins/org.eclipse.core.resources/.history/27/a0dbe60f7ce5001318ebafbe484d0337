@@ -1,0 +1,158 @@
+package com.me.ngawwh;
+
+import com.badlogic.gdx.ApplicationListener;
+import com.badlogic.gdx.Game;
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Application.ApplicationType;
+import com.badlogic.gdx.Input.Keys;
+import com.badlogic.gdx.InputProcessor;
+import com.badlogic.gdx.Screen;
+import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.assets.loaders.TextureLoader.TextureParameter;
+import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.GL10;
+import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.Texture.TextureFilter;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector3;
+
+public class MainGame extends Game implements InputProcessor {
+	private OrthographicCamera camera;
+	private AssetManager manager = new AssetManager();
+	private TextureParameter param = new TextureParameter();
+	private Loader load = new Loader();
+	
+	@Override
+	public void create() {
+		camera = new OrthographicCamera(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+		Gdx.input.setInputProcessor(this);
+        Gdx.input.setCatchBackKey(true);
+        //Parametros de texturas
+        param.genMipMaps = true;
+		param.minFilter = TextureFilter.Nearest;
+		//Carga de Backgrounds
+		manager.load("data/backgroundInicio.png",Texture.class,param);
+		manager.load("data/backgroundmaingame.png",Texture.class,param);
+		manager.load("data/backgroundstilyst.png",Texture.class,param);
+		manager.load("data/backgroundquestmenu.png",Texture.class,param);
+		manager.load("data/backgroundquestmenu2.png",Texture.class,param);
+		manager.load("data/backgroundquestinfo.png",Texture.class,param);
+		manager.load("data/backgroundminigame.png",Texture.class,param);
+		manager.load("data/backgroundselectmap.png",Texture.class,param);
+		//Carga de Botones
+		manager.load("data/BotonesInicio.png",Texture.class,param);
+		manager.load("data/basicbutton.png",Texture.class,param);
+		manager.load("data/BotonPers.png",Texture.class,param);
+		manager.load("data/BotonMapa.png",Texture.class,param);
+		manager.load("data/BotonQuest.png",Texture.class,param);
+		manager.load("data/BotonMiniG.png",Texture.class,param);
+		manager.load("data/BotonConfig.png",Texture.class,param);
+		manager.load("data/BotonMochila.png",Texture.class,param);
+		//Carga de Fuentes
+		manager.load("data/arial.fnt",BitmapFont.class);
+		//
+		load.Assign_MG(this);
+		setScreen(load);
+	}
+	
+	public OrthographicCamera Camara(){
+		return camera;
+	}
+
+	@Override
+	public void dispose() {
+		super.dispose();
+	}
+
+	@Override
+	public void render() {
+		super.render();
+	}
+
+	@Override
+	public void resize(int width, int height) {
+		super.resize(width, height);
+	}
+
+	@Override
+	public void pause() {
+		super.pause();
+	}
+
+	@Override
+	public void resume() {
+		super.resume();
+	}
+
+	@Override
+	public boolean keyDown(int keycode) {
+		if(Gdx.app.getType() == ApplicationType.Android){
+			if(this.getScreen().hashCode() != Loader.get_Instance().principal.hashCode() && this.getScreen().hashCode() != Loader.get_Instance().inicio.hashCode() && this.getScreen().hashCode() != Loader.get_Instance().estilista.hashCode() && keycode == Keys.BACK){
+				if(this.getScreen().hashCode() == Loader.get_Instance().questsel.hashCode() && keycode == Keys.BACK){
+					setScreen(Loader.get_Instance().quest);
+				}else{
+					setScreen(Loader.get_Instance().principal);
+				}
+			}else{
+					setScreen(Loader.get_Instance().inicio);
+				//Gdx.input.setCatchBackKey(false);
+			}
+		}else{
+			if(this.getScreen().hashCode() != Loader.get_Instance().principal.hashCode() && this.getScreen().hashCode() != Loader.get_Instance().inicio.hashCode() && this.getScreen().hashCode() != Loader.get_Instance().estilista.hashCode() && keycode == Keys.BACKSPACE){
+				if(this.getScreen().hashCode() == Loader.get_Instance().questsel.hashCode() && keycode == Keys.BACKSPACE){
+					setScreen(Loader.get_Instance().quest);
+				}else{
+					setScreen(Loader.get_Instance().principal);
+				}
+			}else{
+					setScreen(Loader.get_Instance().inicio);
+				//Gdx.input.setCatchBackKey(false);
+			}
+		}
+		return true;
+	}
+
+	@Override
+	public boolean keyUp(int keycode) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean keyTyped(char character) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean touchDown(int screenX, int screenY, int pointer, int button){
+		return false;
+	}
+
+	@Override
+	public boolean touchUp(int screenX, int screenY, int pointer, int button) {
+		
+		return false;
+	}
+
+	@Override
+	public boolean touchDragged(int screenX, int screenY, int pointer) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean mouseMoved(int screenX, int screenY) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean scrolled(int amount) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+}

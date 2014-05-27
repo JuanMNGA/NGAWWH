@@ -13,21 +13,24 @@ public class CharGamePage implements Screen{
 	private Texture textureInfoChar;
 	private SpriteBatch b;
 	private MainGame MG;
+	private Loader load;
 	
-	private static CharGamePage pagina = new CharGamePage();
+	private boolean isLoaded = false;
 	
 	public CharGamePage(){}
 	
-	public static CharGamePage get_Instance(){
-		return pagina;
+	public boolean isLoad(){
+		return isLoaded;
 	}
 	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		this.camera = camera;
 		camera.update();
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		this.load = load;
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		textureInfoChar = LoadGamePage.get_Instance().get().get("data/backgroundquestmenu.png",Texture.class);
+		textureInfoChar = load.manager.get("data/backgroundquestmenu.png",Texture.class);
+		isLoaded = true;
 	}
 
 	@Override
@@ -67,7 +70,6 @@ public class CharGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override

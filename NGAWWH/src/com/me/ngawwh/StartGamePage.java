@@ -15,8 +15,6 @@ import com.badlogic.gdx.math.Vector3;
 
 public class StartGamePage implements Screen{
 	
-	private static StartGamePage pagina = new StartGamePage();
-	
 	private OrthographicCamera camera;
 	private Texture textureStartGame;
 	private Texture textureNew;
@@ -27,23 +25,21 @@ public class StartGamePage implements Screen{
 	private float pos1x, pos1y, pos2x, pos2y, pos3x, pos3y, tamx, tamy;
 	private Rectangle r_New, r_Cont, r_Exit;
 	private BitmapFont fuente;
+	private Loader load;
 	
-	private StartGamePage(){}
+	public StartGamePage(){}
 	
-	public static StartGamePage get_Instance(){
-		return pagina;
-	}
-	
-	public void load(MainGame mg, OrthographicCamera camera){
+	public void load(MainGame mg, OrthographicCamera camera, Loader load){
 		MG = mg;
+		this.load = load;
 		this.camera = camera;
 		camera.update();
-		b = new SpriteBatch(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
+		b = load.b;
 		b.setProjectionMatrix(camera.combined);
-		textureStartGame = LoadGamePage.get_Instance().get().get("data/backgroundInicio.png",Texture.class);
-		textureNew = LoadGamePage.get_Instance().get().get("data/BotonesInicio.png",Texture.class);
-		textureCont = LoadGamePage.get_Instance().get().get("data/BotonesInicio.png",Texture.class);
-		textureExit = LoadGamePage.get_Instance().get().get("data/BotonesInicio.png",Texture.class);
+		textureStartGame = load.manager.get("data/backgroundInicio.png",Texture.class);
+		textureNew = load.manager.get("data/BotonesInicio.png",Texture.class);
+		textureCont = load.manager.get("data/BotonesInicio.png",Texture.class);
+		textureExit = load.manager.get("data/BotonesInicio.png",Texture.class);
 		pos1x = Gdx.graphics.getWidth()*(0.1125f);
 		pos2x = Gdx.graphics.getWidth()*(0.375f);
 		pos3x = Gdx.graphics.getWidth()*(0.6375f);
@@ -53,15 +49,19 @@ public class StartGamePage implements Screen{
 		r_New = new Rectangle(pos1x,pos1y,tamx,tamy);
 		r_Cont = new Rectangle(pos2x,pos2y,tamx,tamy);
 		r_Exit = new Rectangle(pos3x,pos3y,tamx,tamy);
-		fuente = LoadGamePage.get_Instance().get().get("data/arial.fnt",BitmapFont.class);
+		fuente = load.manager.get("data/arial.fnt",BitmapFont.class);
+		if(!load.estilista.isLoad())
+			load.estilista.load(MG,MG.Camara(),load);
+		if(!load.principal.isLoad())
+			load.principal.load(MG,MG.Camara(),load);
 	}
 	
 	public void contains(float x, float y){
 		if(r_New.contains(x,y)){
-			MG.setScreen(StylistGamePage.get_Instance());
+			MG.setScreen(load.estilista);
 		}
 		if(r_Cont.contains(x,y)){
-			MG.setScreen(MainGamePage.get_Instance());
+			MG.setScreen(load.principal);
 		}
 		if(r_Exit.contains(x,y)){
 			Gdx.app.exit();
@@ -117,7 +117,6 @@ public class StartGamePage implements Screen{
 	@Override
 	public void resume() {
 		// TODO Auto-generated method stub
-		
 	}
 
 	@Override
